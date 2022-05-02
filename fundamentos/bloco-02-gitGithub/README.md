@@ -1,1 +1,1 @@
-Hojê foi visto e inicializado a parte da configuração para usar o git e git huh e suas diferenças.
+Iniciado o módulo 02 de Git e GitHub, onde foram apresentado os comandos básicos e criação do repositório no GitHub.
