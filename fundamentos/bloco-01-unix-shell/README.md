@@ -1,0 +1,1 @@
+Nesta primeira semana aprendemos o que é Unix e Shell, a aprtir daí passamos a criar pastas e arquivos utilizando o terminal do linux. Vários comando foram sendo utilizados, como: cat, mkdir, rm, rmdir, >, >>, find, history, sleep, sort, grep, chmod, who, ps, jobs, kill, entre outros. 
