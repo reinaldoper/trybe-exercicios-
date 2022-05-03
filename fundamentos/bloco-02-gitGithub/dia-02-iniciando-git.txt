@@ -1,0 +1,1 @@
+Neste dia aprendemos como criar branch e fazer alterações no git através do pull request e fazer o merge das atualizações.
