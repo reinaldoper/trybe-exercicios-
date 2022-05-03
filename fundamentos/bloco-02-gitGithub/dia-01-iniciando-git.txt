@@ -1,0 +1,1 @@
+Foi inicializado o aprendizado sobre o git e github, apresentado os primeiros comando e finalizado com exercícios básicos no course da Trybe.
