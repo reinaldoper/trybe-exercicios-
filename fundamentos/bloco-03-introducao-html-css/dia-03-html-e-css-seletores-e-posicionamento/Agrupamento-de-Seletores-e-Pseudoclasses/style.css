@@ -5,7 +5,7 @@ ol:hover{
     background-color: aqua;
 }
 li:active{
-    background-color: red;
+    font-style: red;
 }
 ul, ol{
     list-style:none;
