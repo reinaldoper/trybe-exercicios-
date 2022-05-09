@@ -1,0 +1,9 @@
+.order-list{
+    background-color: yellow;
+}
+.impar{
+    text-transform:uppercase;
+}
+.par{
+    color: green;
+}
