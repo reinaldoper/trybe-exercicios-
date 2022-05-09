@@ -14,3 +14,15 @@
     font-size: 40px;
     border: 1px solid black;
 }
+li{
+    font-size: 40px;
+}
+em{
+    font-weight:bold;
+}
+.linguagem{
+    color: blue;
+}
+.java{
+    color: pink;
+}
