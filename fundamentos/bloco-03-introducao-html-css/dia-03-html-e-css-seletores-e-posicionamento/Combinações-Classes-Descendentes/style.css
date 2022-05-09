@@ -10,3 +10,7 @@
 .fonte{
     color: red;
 }
+.italic{
+    font-size: 40px;
+    border: 1px solid black;
+}
