@@ -1,3 +1,9 @@
 .center{
     text-align: center;
 }
+ol:hover{
+    background-color: aqua;
+}
+li:active{
+    background-color: red;
+}
