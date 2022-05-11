@@ -1,17 +1,77 @@
 .list-menu li{
     display: inline-block;
     width: 120px;
+    margin: 20px;
+    font-size: 20px;
+    margin-left: 40px;
+    text-decoration: none;
+}
+.nav{
+    list-style: none;
+   
+    background-color: rgb(140, 231, 231);
+    
 }
 p{
     text-align: justify;
-    background-color: beige;
+    color:black;
+   
 }
 body{
     background-color: aqua;
+    font-family: 'Merriweather';
 }
 h2{
     color: rgb(224, 119, 70);
 }
+#fatos{
+    margin-left: 80px;
+}
 td, th{
     border: 1px solid gray;
+}
+#camarao{
+    float: left;
+    width: 225px;
+    border-radius: 4%;
+}
+footer{
+    text-align: center;
+    color: rgb(236, 79, 79);
+    margin-top: 20px;
+}
+h3{
+    color: rgb(126, 22, 22); 
+}
+
+article{
+    display: inline-block;
+    margin: 0;
+}
+section{
+    display: inline-block;
+}
+
+main{
+    display:block;
+}
+
+aside{
+    float:right;
+    width: 300px;
+    background-color: rgb(223, 120, 120);
+    margin-top: 10px;
+}
+h1{
+    text-align: center;
+}
+p{
+    margin-right: 330px;
+    
+}
+#nome-cientifico{
+    font-size: large;
+}
+table{
+    background-color: blue;
 }
