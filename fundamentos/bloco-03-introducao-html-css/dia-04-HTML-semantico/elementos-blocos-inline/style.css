@@ -4,5 +4,14 @@
 }
 p{
     text-align: justify;
-    
+    background-color: beige;
+}
+body{
+    background-color: aqua;
+}
+h2{
+    color: rgb(224, 119, 70);
+}
+td, th{
+    border: 1px solid gray;
 }
