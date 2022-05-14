@@ -18,7 +18,7 @@ console.log(menu1.push("Conntato"));
 //exercicio 4
 
 let groceryList = ['Arroz', 'Feijão', 'Alface', 'Melancia'];
-for (index = 0; groceryList.length(); index +=1){
+for (index = 0; groceryList.lenght; index +=1){
     console.log(groceryList[index]);
 }
 
@@ -57,3 +57,25 @@ let names = ['João', 'Maria', 'Antônio', 'Margarida'];
 for (let result of names){
     console.log(result);
 }
+// exercico 2 2° parte imprimir valor do array
+let numbers = [5, 9, 3, 19, 70, 8, 100, 2, 35, 27];
+for (let number of numbers){
+    console.log(number);
+}
+
+// exercicio 3 2° parte - adicionar mai 1
+numbers = [5, 9, 3, 19, 70, 8, 100, 2, 35, 27];
+for (let number of numbers){
+    number ++;
+    console.log(number);
+}
+
+// exercicio 4 2° parte - médi aritmética
+let number = [5, 9, 3, 19, 70, 8, 100, 2, 35, 27];
+let x ;
+let soma = 0;
+for (let x of number){
+    soma += number[x];
+    console.log(soma);
+}
+
