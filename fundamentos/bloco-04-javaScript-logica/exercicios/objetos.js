@@ -58,3 +58,82 @@ let names = {
   for(let key in names){
     console.log("Olá "+names[key]);
   }
+  console.log("");
+  //último exercicios de fixação
+   car = {
+    model: 'A3 Sedan',
+    manufacturer: 'Audi',
+    year: 2020
+  };
+  for(let key in car){
+    console.log(key+" - "+car[key]);
+  }
+  console.log("");
+  //funções
+  function maiorNum(primeiroNum, segundoNum) {
+    if (primeiroNum > segundoNum) {
+      return primeiroNum + ' é maior que ' + segundoNum;
+    } else if (segundoNum > primeiroNum) {
+      return segundoNum + ' é maior que ' + primeiroNum;
+    } else {
+      return 'Os números são iguais';
+    }
+  }
+  
+  console.log(maiorNum(10, 20)); // 20 é maior que 10
+  console.log(maiorNum(2, -5)); // 2 é maior que -5
+  console.log(maiorNum(1, 1)); // Os números são iguais
+  console.log("");
+  //exercicios complementares
+  let info = {
+    personagem: 'Margarida',
+    origem: 'Pato Donald',
+    nota: 'Namorada do personagem principal nos quadrinhos do Pato Donald',
+    recorrente: 'Sim',
+  };
+  //1 - Imprima no console uma mensagem de boas-vindas para a personagem acima
+  console.log("Bem vinda "+info.personagem+"!");
+  console.log("");
+  for(let key in info){
+      console.log(key);
+  }
+  console.log("");
+  // mostrar os valores do objeto
+  for(let key in info){
+    console.log(info[key]);
+}
+console.log("");
+//juntando dois objetos e imprimir o resultado.
+let info1 = {
+    personagem: 'Tio Patinhas',
+    origem: 'Christmas on Bear Mountain,',
+    nota: 'O último MacPatinhas',
+    recorrente: 'Sim',
+  };
+  for(let key in info, info1){
+        console.log(info[key]+" e " +info1[key]);
+  }
+  console.log("");
+  //acessando a chave dentro do objeto
+  let leitor = {
+    nome: 'Julia',
+    sobrenome: 'Pessoa',
+    idade: 21,
+    livrosFavoritos: [
+      {
+        titulo: 'O Pior Dia de Todos',
+        autor: 'Daniela Kopsch',
+        editora: 'Tordesilhas',
+      },
+      {
+        titulo: 'Harry Potter e o Prisioneiro de Azkaban',
+        autor: 'JK Rowling',
+        editora: 'Rocco',
+      },
+    ],
+  };
+ 
+    console.log("O livro favorito de "+leitor.nome+" " + leitor.sobrenome+"  é "+leitor.livrosFavoritos[0].titulo)+".";
+console.log("");
+//Acessando o array
+console.log(leitor.nome+" tem "+leitor.livrosFavoritos.length+" livros favoritos.");
