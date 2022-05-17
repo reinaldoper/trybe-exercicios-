@@ -1,3 +1,5 @@
+ exercicios/4.4
+
 # Trybe
 
 Este repositório contém todas as atividades de aprendizagem desenvolvidas por _[Reinaldo Pereira dos Santos](https://www.linkedin.com/in/reinaldo-pereira-9222a27a/)_ enquanto estudava na [Trybe](https://www.betrybe.com/) :rocket:
@@ -256,3 +258,4 @@ O programa conta com mais de 1.500 horas de aulas presenciais e online, aborda i
 - [ ] 35-5: _[Projeto - Tech news]()_
 master
 # [...]
+ master
