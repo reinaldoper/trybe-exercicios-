@@ -4,6 +4,8 @@ Este repositório contém todas as atividades de aprendizagem desenvolvidas por 
 
 _"A Trybe é uma escola do futuro para qualquer pessoa que queira melhorar de vida e construir uma carreira de sucesso em tecnologia, onde a pessoa só paga quando conseguir um bom trabalho."_
 
+exercicios/4.3
+Neste bloco foram desenvolvidas habilidades em javaScript e lógicas de programação. Criação de funções, interpretação de algoritmos em J
 O programa conta com mais de 1.500 horas de aulas presenciais e online, aborda introdução ao desenvolvimento de software, front-end, back-end, ciência da computação, engenharia de software, metodologias ágeis e habilidades comportamentais.
 
 ## Fundamentos do Desenvolvimento Web :white_check_mark:
@@ -252,5 +254,5 @@ O programa conta com mais de 1.500 horas de aulas presenciais e online, aborda i
 - [ ] 35-3: _Entrada e Saída de dados_
 - [ ] 36-4: _Entrada e Saída de dados_
 - [ ] 35-5: _[Projeto - Tech news]()_
-
+master
 # [...]
