@@ -38,7 +38,7 @@ for (var i = word.length - 1; i >= 0; i--) {
 }
 console.log(newString);
 
-// maior numero primo - incompleto
+// maior numero primo - completo
 function primeNumber(num) {
   for (var divisor = 2; divisor < num; divisor++)
     if (num % divisor == 0) return false;
@@ -59,3 +59,16 @@ for (i = 2; i < determinadoNumero; i++) {
 }
 console.log("O maior é :");
 console.log(maior);
+
+///maior string incompleto
+let array = ['java', 'javascript', 'python', 'html', 'css'];
+var i;
+let height = [];
+for (i = 0; i < array.length; i++) {
+    if(array[i] > height){
+      height = array[i];
+    }
+
+}
+console.log("O maior é :");
+console.log(height);
