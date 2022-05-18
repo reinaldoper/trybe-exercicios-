@@ -1,0 +1,32 @@
+h1{
+    font-size: 65px;
+    color: orange;
+    font-family: sans-serif;
+}
+#list{
+    background-color: aqua;
+    line-height:5ch;
+    text-align: center;
+}
+.color{
+    background-color: blueviolet;
+    font-style: italic;
+}
+body{
+    background-color: gray;
+    font-size: 16px;
+}
+#paragrafo{
+    font-weight: 600;
+    font-size: 3em;
+    text-decoration: dashed;
+}
+#red{
+    background-color: red;
+}
+#yellow{
+    background-color: yellow;
+}
+#brown{
+    background-color: brown;
+}
