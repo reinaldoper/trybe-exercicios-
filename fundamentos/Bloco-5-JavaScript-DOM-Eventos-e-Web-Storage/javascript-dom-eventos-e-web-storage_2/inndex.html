@@ -34,12 +34,27 @@
             console.log(document.getElementById("elementoOndeVoceEsta").nextSibling.nextElementSibling);
             //sétimo exercicio
             console.log(document.getElementById("pai").lastElementChild.previousElementSibling);
-
+ 
             //// parte 2 --- 1° exercício- crie um irmão a partir do elementoOndeVoceEsta. Incompleto
-            let irmao = document.querySelector(".elementoOndeVoceEsta");
-            let newIrmao = document.createElement("section");
-            console.log(newIrmao);
-            irmao.appendChild(newIrmao);
+            let pai = document.querySelector("#pai");
+            let irmao = document.createElement("section");
+            var texto  = document.createTextNode("Um irmão");
+            irmao.appendChild(texto);
+            pai.appendChild(irmao);
+            console.log(irmao);
+            //criar um filho a partir de onde vc está
+            let eu = document.querySelector("#elementoOndeVoceEsta");
+            let filho = document.createElement("section");
+            var texto1  = document.createTextNode("Meu filho");
+            filho.appendChild(texto1);
+            eu.appendChild(filho);
+            console.log(filho);
+            //criar um filho para - O primeiro filho do filho
+            let novoFilho = document.querySelector("#elementoOndeVoceEsta");
+            let filhoDele = document.createElement("section");
+            let texto2 = document.createTextNode("Filho do primeiro filho meu");
+            filhoDele.appendChild(texto2);
+            novoFilho.appendChild(filhoDele);
       </script>
 </body>
 </html>
