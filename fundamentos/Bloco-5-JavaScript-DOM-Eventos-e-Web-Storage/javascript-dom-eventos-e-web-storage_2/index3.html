@@ -69,7 +69,7 @@
         let Main = document.createElement("main");
         tagMain.appendChild(Main);
         let Main1 = document.querySelector("main");
-        Main1.classList.add("main-content");
+        Main1.className = "main-content";
        
         //Adicione a tag section com a classe - center-content - como filho da tag main criada no passo 2;
         let tagSection = document.querySelector("main");
@@ -100,16 +100,12 @@
         //Adicione uma lista não ordenada com os valores de 1 a 10 por extenso, ou seja, um, dois, três, ... como valores da lista. Essa lista deve ser filha do section criado no passo 6;
         let List = document.createElement("ul");
         let Element;
-        for (let i = 1; i <= 10; i += 1) {
-            Element = document.createElement("li");
-           /*  i[1] = "um";
-            i[2] = "dois";
-            i[3] = "tres";
-            i[4] = "quatro";
-            i[5] = "cinco"; */
-            Element.innerText = `${i}`;
-            List.appendChild(Element);
-        }
+        let array = ["um", "dois", "três", "quatro", "cinco", "seis", "sete", "oito", "nove", "dez"];
+              for(let b = 0; b < array.length; b++){
+                Element = document.createElement("li");
+                Element.innerText = array[b];
+                List.appendChild(Element);
+              }
         //Element.innerText = "um";
         document.querySelector(".right-content").appendChild(List);
         //Adicione 3 tags h3, todas sendo filhas do main criado no passo 2.
@@ -123,15 +119,30 @@
         //---
         let tagh5 = document.querySelector("main");
         let tagh51 = document.createElement("h3");
-        tagh3.appendChild(tagh51);
+        tagh5.appendChild(tagh51);
         //Adicione a classe title na tag h1 criada;
         text.className = "title";
         //Adicione a classe description nas 3 tags h3 criadas;
         tagh31.className = "description";
         tagh41.className = "description";
         tagh51.className = "description";
+        //função cria tag h3 dentro do local expecificado e passado como parametro
+        text.className = "title";
+        local = "main";
+        function creatH3(local){
+          let tagH3 = document.querySelector(local);
+          let tagH31 = document.createElement('h3');
+          tagH3.appendChild(tagH31);
+          return tagH31;
+        }
+        // função cria quantidade de classes de h3
+        function creatClass(elemento, classes){
+            elemento.className = classes;
+        }
+        creatClass(creatH3(local),"description");
         // Remova a section criado no passo 5 (aquele que possui a classe left-content). Utilize a função .removeChild();
-        
+        let removerSection = document.querySelector("main");
+        removerSection.firstElementChild.nextSibling.remove(); 
         //🚀 Troque a cor de fundo do elemento pai da section criada no passo 3 (aquela que possui a classe center-content) para a cor verde;
         var element = document.querySelector(".main-content");
         element.style.backgroundColor="green";
