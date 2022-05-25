@@ -162,13 +162,15 @@
 
         //função cria tag h3 dentro do local expecificado e passado como parametro
         text.className = "title";
-        local = "main";
+        
         function creatH3(local){
           let tagH3 = document.querySelector(local);
           let tagH31 = document.createElement('h3');
           tagH3.appendChild(tagH31);
           return tagH31;
         }
+        let local = "main";
+        //console.log(creatH3("main"));
 
 
         // função cria quantidade de classes de h3
@@ -197,6 +199,13 @@
             onList.removeChild(elem);
           }
         }
+        
+           let h = document.querySelector(".main-content");
+           let innstalFilho = document.createElement("footer");
+           /* innstalFilho.innerHTML = "roda-pe";
+           innstalFilho.attributes("id","roda-pe"); */
+          h.appendChild(innstalFilho);
+       
         
     </script>
   </body>
