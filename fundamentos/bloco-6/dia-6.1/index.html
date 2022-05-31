@@ -18,7 +18,7 @@
             div{
                 display: inline-block;
                 text-align: center;
-                margin-left: 250px;
+                margin-left: 450px;
             }
             #form{
                 text-align: center;
@@ -31,9 +31,11 @@
         <h1>Entrada de dados:</h1>
     </header>
     <div>
-        <form name="user" method="get" id="form">
+        <form name="user" method="get" id="form" action="">
             <input type="email" name="email" id="" placeholder="Digite seu email!" required  autocomplete="off" autofocus>
-            <input type="password" name="nome" id="" placeholder="Digite seu nome!" required>
+            <br>
+            <input type="password" name="nome" id="" placeholder="Digite seu nome!" required><br>
+
             <label for="ckeck">Lembre-me</label><input type="checkbox" name="check" id="" title="Lembre-me">
             <button type="submit">Entrar</button>
         </form>
