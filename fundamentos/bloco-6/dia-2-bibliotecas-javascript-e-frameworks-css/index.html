@@ -16,6 +16,52 @@
             crossorigin="anonymous"></script>
     </head>
     <body>
+        <h1 class="display-1">Formulário de fixação.</h1>
+        <div class="formulario container">
+            <form action="submit" method="get" id="form">
+                <label for="nome" class="form-label">Nome:
+                    <input type="text" name="nome" id="nome" min="10"
+                        max="40" required>
+                </label>
+                <br>
+                <label for="email" class="form-label">Email:
+                    <input type="email" name="email" id="email" min="10"
+                        max="50" required>
+                </label>
+                <br>
+                <p>Destino Preferido:</p>
+                <label for="viagem" class="form-label">
+                    <input type="radio" name="viagem" id="viagem"
+                        value="Cidade">Cidade
+                </label>
+                <label for="campo" class="form-label">
+                    <input type="radio" name="viagem" id="campo"
+                        value="Campo">Campo
+                </label>
+                <label for="praia" class="form-label">
+                    <input type="radio" name="viagem" id="praia"
+                        value="Craia">Praia
+                </label>
+                <label for="montanhas" class="form-label">
+                    <input type="radio" name="viagem" id="montanhas"
+                        value="Montanhas">Montanhas
+                </label>
+                <p>Por que você deveria ser a pessoa desenvolvedora a
+                    ganhar o concurso TrybeTrip?</p>
+                <textarea rows="10" cols="20" maxlength="500" required></textarea>
+                <br>
+                <p>Qual a melhor data para realizar sua viagem?</p>
+                <input type="date" name="data" id="data">
+                <br>
+                <p>Gostaria de receber outras incríveis oportunidades
+                    oferecidas pela Trybe?</p>
+                <label for="promocao">
+                    <input type="checkbox" name="viagem" id="promocao"
+                        value="Montanhas">Concordo.
+                </label>
+                <button type="submit" class="btn btn-primary">Enviar</button>
+            </form>
+        </div>
 
     </body>
 </html>
