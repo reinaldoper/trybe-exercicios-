@@ -1,0 +1,28 @@
+.formulario{
+    border: 2px solid rgb(97, 92, 92);
+    max-width: 500px;
+    padding: 40px 40px;
+    text-align: center;
+    display: inline-block;
+}
+/* #form{
+    border: 2px solid rgb(167, 17, 17);
+
+} */
+#nome{
+    margin-bottom: 10px;
+}
+body{
+    text-align: center;
+    background-color: darkgrey;
+}
+#nome #email{
+    border-radius: 2px;
+    background-color: azure;
+}
+p{
+    color: rgb(224, 247, 247);
+}
+h1{
+    color: beige;
+}
