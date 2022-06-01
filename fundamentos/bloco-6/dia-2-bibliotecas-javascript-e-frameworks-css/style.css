@@ -1,0 +1,23 @@
+body{
+    max-width: 80%;
+    margin: 40px auto;
+    background-color: rgb(233, 226, 239);
+    border-radius: 20px;
+}
+header{
+    background-color: rgb(5, 6, 6);
+    border-radius: 20px;
+}
+.container{
+    margin: 20px 0;
+}
+h1{
+    color: antiquewhite;
+}
+.form-control{
+    border-radius: 20px;
+}
+#data{
+    border-radius: 20px;
+    color: brown;
+}
