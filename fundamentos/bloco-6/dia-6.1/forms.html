@@ -6,7 +6,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="style.css">
         <title>Exercicios de fixação</title>
-        <link rel="stylesheet" href="bootstrap-4.5.3-dist/css/bootstrap.min.css">
+        <link rel="stylesheet"
+            href="bootstrap-4.5.3-dist/css/bootstrap.min.css">
         <script src="script.js"></script>
         <script src="bootstrap-4.5.3-dist/js/bootstrap.min.js"></script>
     </head>
@@ -22,38 +23,47 @@
             </head>
             <body>
                 <h1>Formulário de fixação.</h1>
-                <div class="formulario">
+                <div class="formulario container">
                     <form action="submit" method="get" id="form">
                         <label for="nome">Nome:
-                        <input type="text" name="nome" id="nome" min="10" max="40" required>
-                    </label>
+                            <input type="text" name="nome" id="nome" min="10"
+                                max="40" required>
+                        </label>
                         <br>
                         <label for="email">Email:
-                        <input type="email" name="email" id="email" min="10" max="50" required>
-                    </label>
+                            <input type="email" name="email" id="email" min="10"
+                                max="50" required>
+                        </label>
                         <br>
                         <p>Destino Preferido:</p>
                         <label for="viagem">
-                            <input type="radio" name="viagem" id="viagem" value="Cidade">Cidade
+                            <input type="radio" name="viagem" id="viagem"
+                                value="Cidade">Cidade
                         </label>
                         <label for="campo">
-                            <input type="radio" name="viagem" id="campo" value="Campo">Campo
+                            <input type="radio" name="viagem" id="campo"
+                                value="Campo">Campo
                         </label>
                         <label for="praia">
-                            <input type="radio" name="viagem" id="praia" value="Craia">Praia
+                            <input type="radio" name="viagem" id="praia"
+                                value="Craia">Praia
                         </label>
                         <label for="montanhas">
-                            <input type="radio" name="viagem" id="montanhas" value="Montanhas">Montanhas
+                            <input type="radio" name="viagem" id="montanhas"
+                                value="Montanhas">Montanhas
                         </label>
-                        <p>Por que você deveria ser a pessoa desenvolvedora a ganhar o concurso TrybeTrip?</p>
+                        <p>Por que você deveria ser a pessoa desenvolvedora a
+                            ganhar o concurso TrybeTrip?</p>
                         <textarea rows="10" cols="20" maxlength="500" required></textarea>
                         <br>
                         <p>Qual a melhor data para realizar sua viagem?</p>
                         <input type="date" name="data" id="data">
                         <br>
-                        <p>Gostaria de receber outras incríveis oportunidades oferecidas pela Trybe?</p>
+                        <p>Gostaria de receber outras incríveis oportunidades
+                            oferecidas pela Trybe?</p>
                         <label for="promocao">
-                            <input type="checkbox" name="viagem" id="promocao" value="Montanhas">Concordo.
+                            <input type="checkbox" name="viagem" id="promocao"
+                                value="Montanhas">Concordo.
                         </label>
                         <button type="submit">Enviar</button>
                     </form>
