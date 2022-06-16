@@ -1,4 +1,4 @@
-const { sum, myRemove, myFizzBuzz, encode, decode, techList, hydrate } = require('./sum');
+const { sum, myRemove, myFizzBuzz, encode, decode, techList, hydrate, searchEmployee  } = require('./sum');
 
 describe('Requisito 1', () => {
     it('retorna a soma', () => {
@@ -15,7 +15,7 @@ describe('Requisito 1', () => {
     })
 });
 
-describe('requisito 2', () => {
+describe('Requisito 2', () => {
     it('recebe array e rotorna a exclusão', () => {
         expect([1, 2, 4]).toEqual(myRemove([1, 2, 3, 4], 3));
     });
@@ -23,7 +23,7 @@ describe('requisito 2', () => {
         const retorno = [1, 2, 3, 4];
         expect(myRemove([1, 2, 3, 4], 3)).not.toContain(retorno);
     });
-    it('recebe array e rotorna e retorna array original', () => {
+    it('recebe array e rotorna  array original', () => {
         expect([1, 2, 3, 4]).toEqual(myRemove([1, 2, 3, 4], 5));
     });
 });
@@ -45,7 +45,7 @@ describe('Requisito 3', () => {
         expect(myFizzBuzz('s')).toBe(false);
     });
 });
-describe('requisito 4', () => {
+describe('Requisito 4', () => {
     it('Testa se a função encode é definida', () => {
         expect(encode).toBeDefined();
     });
@@ -128,7 +128,27 @@ describe('Requisito 6', () => {
       expect(hydrate('1 copo de catuaba, 1 cervejas e 1 copo de vinho')).toBe('3 copos de água');
       expect(hydrate('4 caipirinhas e 2 cervejas')).toBe('6 copos de água');
     });
-  });
+});
+  
+describe('Requisito Bônus', () => {
+    it('Testa se a função searchEmployee é definida', () => {
+        expect(searchEmployee).toBeDefined();
+      });
+      it('Testa se searchEmployee é uma função', () => {
+        expect(typeof searchEmployee).toBe('function');
+      });
+      it('Testa se searchEmployee retorna pela id = 9852-2-2', () => {
+        expect({
+            id: '9852-2-2',
+            firstName: 'Jeff',
+            lastName: 'Cook',
+            specialities: ['Ruby', 'SQL'],
+          }).toEqual(searchEmployee('9852-2-2'));
+      });
+    it('Testa se searchEmployee retorna ID não identificada', () => {
+        expect('ID não identificada').toEqual(searchEmployee('9852-2'))
+    })
+})
 
 
 

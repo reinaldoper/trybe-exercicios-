@@ -96,11 +96,65 @@ function hydrate(array) {
     retorno = '1 copo de água';
   }
   return retorno;
-}
+};
 
+// Dados
+const professionalBoard = [
+  {
+    id: '8579-6',
+    firstName: 'Ana',
+    lastName: 'Gates',
+    specialities: ['UX', 'Design'],
+  },
+  {
+    id: '5569-4',
+    firstName: 'George',
+    lastName: 'Jobs',
+    specialities: ['Frontend', 'Redux', 'React', 'CSS'],
+  },
+  {
+    id: '4456-4',
+    firstName: 'Leila',
+    lastName: 'Zuckerberg',
+    specialities: ['Context API', 'RTL', 'Bootstrap'],
+  },
+  {
+    id: '1256-4',
+    firstName: 'Linda',
+    lastName: 'Bezos',
+    specialities: ['Hooks', 'Context API', 'Tailwind CSS'],
+  },
+  {
+    id: '9852-2-2',
+    firstName: 'Jeff',
+    lastName: 'Cook',
+    specialities: ['Ruby', 'SQL'],
+  },
+  {
+    id: '4678-2',
+    firstName: 'Paul',
+    lastName: 'Dodds',
+    specialities: ['Backend'],
+  },
+];
+
+// Pesquisa
+function searchEmployee (item) {
+
+  let a = professionalBoard.find(p => p.id === item);
+  const retorno = undefined;
+  let msg = '';
+  if (a === retorno) {
+    msg = "ID não identificada";
+    return msg;
+  } else {
+    return a;
+  }
+};
+console.log(searchEmployee('9852-2-2'));
   
   // implemente seus testes aqui
   
   // implemente seus testes aqui
 
-module.exports = { sum, myRemove, myFizzBuzz, encode, decode, techList, hydrate };
+module.exports = { sum, myRemove, myFizzBuzz, encode, decode, techList, hydrate, searchEmployee };
