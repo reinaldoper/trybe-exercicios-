@@ -1,4 +1,4 @@
-const { sum, myRemove, myFizzBuzz, encode, decode } = require('./sum');
+const { sum, myRemove, myFizzBuzz, encode, decode, techList } = require('./sum');
 
 describe('Requisito 1', () => {
     it('retorna a soma', () => {
@@ -44,13 +44,19 @@ describe('Requisito 3', () => {
     it('não é um número', () => {
         expect(myFizzBuzz('s')).toBe(false);
     });
-});;
+});
 describe('requisito 4', () => {
     it('Testa se a função encode é definida', () => {
         expect(encode).toBeDefined();
     });
+    it('Testa se encode é uma função', () => {
+        expect(typeof encode).toBe('function');
+    });
     it('Testa se a função decode é definida', () => {
         expect(decode).toBeDefined();
+    });
+    it('Testa se decode é uma função', () => {
+        expect(typeof decode).toBe('function');
     });
     it('Testa se as vogais aeiou retorna 12345', () => {
         expect(encode('aeiou')).toEqual('12345');
@@ -70,7 +76,43 @@ describe('requisito 4', () => {
     it('verifica o tamanho da string decode', () => {
         expect(decode('123')).toHaveLength(3);
     });
-})
+});
+
+describe('Requisito 5', () => {
+    it('Testa se a função techList é definida', () => {
+      expect(techList).toBeDefined();
+    });
+    it('Testa se techList é uma função', () => {
+      expect(typeof techList).toBe('function');
+    });
+    it('Lista com 5 tecnologias deve retornar uma lista de objetos ordenados', () => {
+      expect(techList(['React', 'Jest', 'HTML', 'CSS', 'JavaScript'], 'Lucas')).toEqual([
+        {
+          tech: 'CSS',
+          name: 'Lucas'
+        },
+        {
+          tech: 'HTML',
+          name: 'Lucas'
+        },
+        {
+          tech: 'JavaScript',
+          name: 'Lucas'
+        },
+        {
+          tech: 'Jest',
+          name: 'Lucas'
+        },
+        {
+          tech: 'React',
+          name: 'Lucas'
+        }
+      ]);
+    });
+    it('Lista com 0 tecnologias deve retornar uma mensagem de erro "Vazio!"', () => {
+      expect(techList([], 'Lucas')).toBe('Vazio!');
+    });
+  });
 
 
 

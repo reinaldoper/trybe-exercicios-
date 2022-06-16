@@ -63,9 +63,28 @@ function decode(vogal1) {
   newArray4 = newArray3.replace(u, "u");
   return newArray4;
 }
+
+function techList (array, item) {
+  const newArray = [];
+  let vazio = '';
+  if (array.length === 0) {
+    vazio = 'Vazio!'
+    return vazio;
+  }
+  for (let i = 0; i < array.length; i++){
+    newArray.push({ tech: array[i], name: item });
+  }
+  newArray.sort(function (a, b) {
+	
+    return (a.tech > b.tech) ? 1 : ((b.tech > a.tech) ? -1 : 0);
+   
+  });
+  return newArray;
+};
+
   
   // implemente seus testes aqui
   
   // implemente seus testes aqui
 
-module.exports = { sum, myRemove, myFizzBuzz, encode, decode };
+module.exports = { sum, myRemove, myFizzBuzz, encode, decode, techList };
