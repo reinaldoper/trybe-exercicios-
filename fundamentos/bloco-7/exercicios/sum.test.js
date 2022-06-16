@@ -1,4 +1,4 @@
-const { sum, myRemove, myFizzBuzz } = require('./sum');
+const { sum, myRemove, myFizzBuzz, encode, decode } = require('./sum');
 
 describe('Requisito 1', () => {
     it('retorna a soma', () => {
@@ -43,6 +43,32 @@ describe('Requisito 3', () => {
     });
     it('não é um número', () => {
         expect(myFizzBuzz('s')).toBe(false);
+    });
+});;
+describe('requisito 4', () => {
+    it('Testa se a função encode é definida', () => {
+        expect(encode).toBeDefined();
+    });
+    it('Testa se a função decode é definida', () => {
+        expect(decode).toBeDefined();
+    });
+    it('Testa se as vogais aeiou retorna 12345', () => {
+        expect(encode('aeiou')).toEqual('12345');
+    });
+    it('Testa se os numeros 12345 retorna aeiou', () => {
+        expect(decode('12345')).toEqual('aeiou');
+    });
+    it('Testa se as letras bcd retorna bcd', () => {
+        expect(encode('bcd')).toEqual('bcd');
+    });
+    it('Testa se os numeros 789 e retorna 789', () => {
+        expect(decode('789')).toEqual('789');
+    });
+    it('verifica o tamanho da string encode', () => {
+        expect(encode('bcd')).toHaveLength(3);
+    });
+    it('verifica o tamanho da string decode', () => {
+        expect(decode('123')).toHaveLength(3);
     });
 })
 

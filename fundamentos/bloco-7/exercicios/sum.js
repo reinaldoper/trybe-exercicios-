@@ -21,10 +21,51 @@ function myFizzBuzz(num) {
     if (num % 3 === 0) return 'fizz';
     if (num % 5 === 0) return 'buzz';
     return num;
-  }
+};
+function encode(vogal) {
+  // seu código aqui
+  let newArray = [];
+  let newArray1 = [];
+  let newArray2 = [];
+  let newArray3 = [];
+  let newArray4= [];
+  let a = /a/g;
+  let e = /e/g;
+  let i = /i/g;
+  let o = /o/g;
+  let u = /u/g;
+  newArray = vogal.replace(a, 1);
+  newArray1 = newArray.replace(e, 2);
+  newArray2 = newArray1.replace(i, 3);
+  newArray3 = newArray2.replace(o, 4);
+  newArray4 = newArray3.replace(u, 5);
+  return newArray4;
+};
+console.log(encode(`aeiou`));
+
+
+function decode(vogal1) {
+  // seu código aqui
+  let newArray = [];
+  let newArray1 = [];
+  let newArray2 = [];
+  let newArray3 = [];
+  let newArray4= [];
+  let a = /1/g;
+  let e = /2/g;
+  let i = /3/g;
+  let o = /4/g;
+  let u = /5/g;
+  newArray = vogal1.replace(a, "a");
+  newArray1 = newArray.replace(e, "e");
+  newArray2 = newArray1.replace(i, "i");
+  newArray3 = newArray2.replace(o, "o");
+  newArray4 = newArray3.replace(u, "u");
+  return newArray4;
+}
   
   // implemente seus testes aqui
   
   // implemente seus testes aqui
 
-module.exports = { sum, myRemove, myFizzBuzz };
+module.exports = { sum, myRemove, myFizzBuzz, encode, decode };
