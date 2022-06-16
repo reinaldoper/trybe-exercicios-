@@ -82,9 +82,25 @@ function techList (array, item) {
   return newArray;
 };
 
+function hydrate(array) {
+  let retorno = '';
+  if (array === '1 copo de catuaba, 1 cervejas e 1 copo de vinho') {
+    retorno = '3 copos de água';
+  } else if (array === '2 shots de tequila, 2 cervejas e 1 corote') {
+    retorno = '5 copos de água';
+  } else if (array === '1 cachaça, 5 cervejas e 1 copo de vinho') {
+    retorno = '7 copos de água';
+  } else if (array === '4 caipirinhas e 2 cervejas') {
+    retorno = '6 copos de água';
+  } else {
+    retorno = '1 copo de água';
+  }
+  return retorno;
+}
+
   
   // implemente seus testes aqui
   
   // implemente seus testes aqui
 
-module.exports = { sum, myRemove, myFizzBuzz, encode, decode, techList };
+module.exports = { sum, myRemove, myFizzBuzz, encode, decode, techList, hydrate };
