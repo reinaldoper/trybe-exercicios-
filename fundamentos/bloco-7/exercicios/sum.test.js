@@ -1,4 +1,4 @@
-const { sum, myRemove, myFizzBuzz, encode, decode } = require('./sum');
+const { sum, myRemove, myFizzBuzz, encode, decode, techList, hydrate, searchEmployee  } = require('./sum');
 
 describe('Requisito 1', () => {
     it('retorna a soma', () => {
@@ -15,7 +15,7 @@ describe('Requisito 1', () => {
     })
 });
 
-describe('requisito 2', () => {
+describe('Requisito 2', () => {
     it('recebe array e rotorna a exclusão', () => {
         expect([1, 2, 4]).toEqual(myRemove([1, 2, 3, 4], 3));
     });
@@ -23,7 +23,7 @@ describe('requisito 2', () => {
         const retorno = [1, 2, 3, 4];
         expect(myRemove([1, 2, 3, 4], 3)).not.toContain(retorno);
     });
-    it('recebe array e rotorna e retorna array original', () => {
+    it('recebe array e rotorna  array original', () => {
         expect([1, 2, 3, 4]).toEqual(myRemove([1, 2, 3, 4], 5));
     });
 });
@@ -44,13 +44,19 @@ describe('Requisito 3', () => {
     it('não é um número', () => {
         expect(myFizzBuzz('s')).toBe(false);
     });
-});;
-describe('requisito 4', () => {
+});
+describe('Requisito 4', () => {
     it('Testa se a função encode é definida', () => {
         expect(encode).toBeDefined();
     });
+    it('Testa se encode é uma função', () => {
+        expect(typeof encode).toBe('function');
+    });
     it('Testa se a função decode é definida', () => {
         expect(decode).toBeDefined();
+    });
+    it('Testa se decode é uma função', () => {
+        expect(typeof decode).toBe('function');
     });
     it('Testa se as vogais aeiou retorna 12345', () => {
         expect(encode('aeiou')).toEqual('12345');
@@ -70,6 +76,78 @@ describe('requisito 4', () => {
     it('verifica o tamanho da string decode', () => {
         expect(decode('123')).toHaveLength(3);
     });
+});
+
+describe('Requisito 5', () => {
+    it('Testa se a função techList é definida', () => {
+      expect(techList).toBeDefined();
+    });
+    it('Testa se techList é uma função', () => {
+      expect(typeof techList).toBe('function');
+    });
+    it('Lista com 5 tecnologias deve retornar uma lista de objetos ordenados', () => {
+      expect(techList(['React', 'Jest', 'HTML', 'CSS', 'JavaScript'], 'Lucas')).toEqual([
+        {
+          tech: 'CSS',
+          name: 'Lucas'
+        },
+        {
+          tech: 'HTML',
+          name: 'Lucas'
+        },
+        {
+          tech: 'JavaScript',
+          name: 'Lucas'
+        },
+        {
+          tech: 'Jest',
+          name: 'Lucas'
+        },
+        {
+          tech: 'React',
+          name: 'Lucas'
+        }
+      ]);
+    });
+    it('Lista com 0 tecnologias deve retornar uma mensagem de erro "Vazio!"', () => {
+      expect(techList([], 'Lucas')).toBe('Vazio!');
+    });
+});
+  
+describe('Requisito 6', () => {
+    it('Testa se a função hydrate é definida', () => {
+      expect(hydrate).toBeDefined();
+    });
+    it('Testa se hydrate é uma função', () => {
+      expect(typeof hydrate).toBe('function');
+    });
+    it('Ao receber uma string retorne a sugestão de quantos copos de água deve-se beber', () => {
+      expect(hydrate('1 cerveja')).toBe('1 copo de água');
+      expect(hydrate('1 cachaça, 5 cervejas e 1 copo de vinho')).toBe('7 copos de água');
+      expect(hydrate('2 shots de tequila, 2 cervejas e 1 corote')).toBe('5 copos de água');
+      expect(hydrate('1 copo de catuaba, 1 cervejas e 1 copo de vinho')).toBe('3 copos de água');
+      expect(hydrate('4 caipirinhas e 2 cervejas')).toBe('6 copos de água');
+    });
+});
+  
+describe('Requisito Bônus', () => {
+    it('Testa se a função searchEmployee é definida', () => {
+        expect(searchEmployee).toBeDefined();
+      });
+      it('Testa se searchEmployee é uma função', () => {
+        expect(typeof searchEmployee).toBe('function');
+      });
+      it('Testa se searchEmployee retorna pela id = 9852-2-2', () => {
+        expect({
+            id: '9852-2-2',
+            firstName: 'Jeff',
+            lastName: 'Cook',
+            specialities: ['Ruby', 'SQL'],
+          }).toEqual(searchEmployee('9852-2-2'));
+      });
+    it('Testa se searchEmployee retorna ID não identificada', () => {
+        expect('ID não identificada').toEqual(searchEmployee('9852-2'))
+    })
 })
 
 
