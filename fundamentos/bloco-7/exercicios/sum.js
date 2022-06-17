@@ -151,7 +151,7 @@ function searchEmployee (item) {
     return a;
   }
 };
-console.log(searchEmployee('9852-2-2'));
+
   
   // implemente seus testes aqui
   
