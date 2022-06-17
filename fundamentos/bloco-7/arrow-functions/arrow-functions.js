@@ -12,6 +12,13 @@ const testingScope = escopo => {
 
 
   
-/* const testingScope = escopo => (escopo === true) ? 'Não devo ser utilizada fora do meu escopo (if)' : 'Não devo ser utilizada fora meu escopo (else)'; */
+
 
 testingScope(true);
+
+//função que retorna array crescente
+const oddsAndEvens = [13, 3, 4, 10, 7, 2];
+const ordena = array => array.sort((a, b) => a - b);
+
+console.log(ordena(oddsAndEvens)); // será necessário alterar essa linha 😉
+
