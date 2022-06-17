@@ -30,7 +30,20 @@ const fatorial = numeros => {
 }
 console.log(fatorial(4));
 
-//fatorial recursivo
+//fatorial recursivo com ternary operator.
 const fatory = numero => (numero === 0) ? 1 : numero * fatory(numero - 1);
 
-console.log(`O fatorial recursivo de 4 é ${fatory(4)}.`);
+console.log(`O fatorial recursivo de 3 é ${fatory(3)}.`);
+
+//Crie uma função que receba uma frase e retorne a maior palavra.
+const maior = frase => {
+  let palavras = frase.split(' ');
+  let bigFor = "";
+for (word of palavras) {
+  if (word.length > bigFor.length) {
+    bigFor = word;
+  }
+}
+  return bigFor;
+}
+console.log(maior('minha casa é bonita e maravilhosa, paralelepipedo'));
