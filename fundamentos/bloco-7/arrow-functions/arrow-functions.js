@@ -29,3 +29,8 @@ const fatorial = numeros => {
   }  return valor;
 }
 console.log(fatorial(4));
+
+//fatorial recursivo
+const fatory = numero => (numero === 0) ? 1 : numero * fatory(numero - 1);
+
+console.log(`O fatorial recursivo de 4 é ${fatory(4)}.`);
