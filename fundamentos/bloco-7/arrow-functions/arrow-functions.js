@@ -21,4 +21,46 @@ const oddsAndEvens = [13, 3, 4, 10, 7, 2];
 const ordena = array => array.sort((a, b) => a - b);
 
 console.log(`Os números ${ordena(oddsAndEvens)} se encontram ordenados de forma crescente!`); // será necessário alterar essa linha 😉
+//fatorial
+const fatorial = numeros => {
+  let valor = 1;
+  for (let i = numeros; i > 1; i--){
+    valor *= i;
+  }  return valor;
+}
+console.log(fatorial(4));
 
+//fatorial recursivo com ternary operator.
+const fatory = numero => (numero === 0) ? 1 : numero * fatory(numero - 1);
+
+console.log(`O fatorial recursivo de 3 é ${fatory(3)}.`);
+
+//Crie uma função que receba uma frase e retorne a maior palavra.
+const maior = frase => {
+  let palavras = frase.split(' ');
+  let bigFor = "";
+for (word of palavras) {
+  if (word.trim().length > bigFor.length) {
+    bigFor = word.trim();
+  }
+}
+  return bigFor;
+}
+console.log(maior('minha casa é bonita e maravilhosa, grande paralelepipedo'));
+
+//substituir o x
+const substituirX = nome => {  
+  const frase = 'Tryber x aqui!';
+  const result = frase.replace('x', nome);
+  return result;
+}
+console.log(substituirX('Bebeto'));
+//retorno da função x
+
+const retorno = substituirX => {
+  const skills = ['javaScript', 'HTML', 'CSS'];
+  return `${substituirX}
+  Minhas três principais habilidades são:
+  ${skills} `;
+}
+console.log(retorno(substituirX('Reinaldo')));
