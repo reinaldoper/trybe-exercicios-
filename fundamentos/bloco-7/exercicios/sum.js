@@ -1,11 +1,11 @@
-function sum(a, b) {
+const sum = (a, b) => {
     if (typeof a !== 'number' || typeof b !== 'number') {
       throw new Error('parameters must be numbers');
     }
   
     return a + b;
 };
-function myRemove(arr, item) {
+const myRemove = (arr, item) => {
     let newArr = [];
     for (let index = 0; index < arr.length; index += 1) {
       if (item !== arr[index]) {
@@ -15,14 +15,14 @@ function myRemove(arr, item) {
     return newArr;
 };
 
-function myFizzBuzz(num) {
+const myFizzBuzz = num => {
     if (typeof num !== 'number') return false;
     if (num % 3 === 0 && num % 5 === 0) return 'fizzbuzz';
     if (num % 3 === 0) return 'fizz';
     if (num % 5 === 0) return 'buzz';
     return num;
 };
-function encode(vogal) {
+const encode = vogal => {
   // seu código aqui
   let newArray = [];
   let newArray1 = [];
@@ -44,7 +44,7 @@ function encode(vogal) {
 console.log(encode(`aeiou`));
 
 
-function decode(vogal1) {
+const decode = vogal1 => {
   // seu código aqui
   let newArray = [];
   let newArray1 = [];
@@ -64,7 +64,7 @@ function decode(vogal1) {
   return newArray4;
 }
 
-function techList (array, item) {
+const techList = (array, item) => {
   const newArray = [];
   let vazio = '';
   if (array.length === 0) {
@@ -82,7 +82,7 @@ function techList (array, item) {
   return newArray;
 };
 
-function hydrate(array) {
+const hydrate = array => {
   let retorno = '';
   if (array === '1 copo de catuaba, 1 cervejas e 1 copo de vinho') {
     retorno = '3 copos de água';
