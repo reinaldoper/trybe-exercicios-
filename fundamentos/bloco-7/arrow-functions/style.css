@@ -4,6 +4,7 @@ header {
     text-align: center;
     margin: auto;
     padding: 20px;
+    border-radius: 8px;
 }
 
 #botao {
@@ -26,4 +27,8 @@ header {
     margin-top: 0;
     margin-left: 5px;
     color: blue;
+}
+body {
+    background-color: rgb(244, 237, 237);
+    
 }

@@ -47,3 +47,20 @@ for (word of palavras) {
   return bigFor;
 }
 console.log(maior('minha casa é bonita e maravilhosa, grande paralelepipedo'));
+
+//substituir o x
+const substituirX = nome => {  
+  const frase = 'Tryber x aqui!';
+  const result = frase.replace('x', nome);
+  return result;
+}
+console.log(substituirX('Bebeto'));
+//retorno da função x
+
+const retorno = substituirX => {
+  const skills = ['javaScript', 'HTML', 'CSS'];
+  return `${substituirX}
+  Minhas três principais habilidades são:
+  ${skills} `;
+}
+console.log(retorno(substituirX('Reinaldo')));
