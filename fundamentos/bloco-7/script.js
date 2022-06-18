@@ -354,11 +354,47 @@ const valoresObj = obj => Object.values(obj);
 
 //5.Crie um objeto de nome allLessons, que deve agrupar todas as aulas através do Object.assign. Cada chave desse novo objeto será uma aula, sendo essas chaves: lesson1, lesson2 e lesson3. Ao executar o comando console.log(allLessons), a saída deverá ser a seguinte:
 
-const alls = Object.assign(lesson1)
-const alls1 = Object.assign(lesson2)
-const alls2 = Object.assign(lesson3)
+const lesson10 = {
+  materia: 'Matemática',
+  numeroEstudantes: 20,
+  professor: 'Maria Clara',
+  turno: 'manhã',
+};
 
-const allLessons = (alls, alls1, alls2) => Object.assign(alls, alls1, alls2);
+const lesson20 = {
+  materia: 'História',
+  numeroEstudantes: 20,
+  professor: 'Carlos',
+};
+
+const lesson30 = {
+  materia: 'Matemática',
+  numeroEstudantes: 10,
+  professor: 'Maria Clara',
+  turno: 'noite',
+};
+
+const alls = Object.assign(lesson10)
+const alls1 = Object.assign(lesson20)
+const alls2 = Object.assign(lesson30)
+
+const allLessons = {
+  lesson1: alls,
+  lesson2: alls1,
+  lesson3: alls2,
+}
+console.log(allLessons);
  
+ //função retorna o número de estudadntes
+const totalEstudantes = (obj) => {
+  const objeto = obj.lesson1.numeroEstudantes;
+  const objeto1 = obj.lesson2.numeroEstudantes;
+  const objeto2 = obj.lesson3.numeroEstudantes;
+  return `O total de estudantes é: ${objeto + objeto1 + objeto2}`;
+}
+ console.log(totalEstudantes(allLessons));
+
+ //função que retorna se a chave valor existe no objeto
+const verificaChaveValor = (obj, chave, valor) => (obj.hasOwnProperty(chave) && obj.chave === valor) ? true : false; 
 
 
