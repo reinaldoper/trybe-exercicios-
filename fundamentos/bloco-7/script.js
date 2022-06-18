@@ -303,8 +303,10 @@ const orderModifier = (order) => {
   // "Olá Luiz Silva, o total do seu pedido de marguerita, pepperoni e Coca-Cola Zero é R$ 50,00."
   order.order.delivery.deliveryPerson = 'Luiz Silva';
   order.payment.total = '50';
+  const pizza = Object.key(order.order.pizza.marguerita[0]);
+  const pizza1 = Object.key(order.order.pizza.pepperoni[0]);
 
-  return `Olá: ${order.order.delivery.deliveryPerson}, o total do seu pedido de marguerita, pepperoni e coca-cola Zero é R$ ${order.payment.total}.`;
+  return `Olá: ${order.order.delivery.deliveryPerson}, o total do seu pedido de marguerita é: ${pizza}, pepperoni é: ${pizza1} e coca-cola Zero é R$ ${order.payment.total}.`;
 
 
 }
@@ -383,7 +385,7 @@ const allLessons = {
   lesson2: alls1,
   lesson3: alls2,
 }
-console.log(allLessons);
+console.log(Object allLessons);
  
  //função retorna o número de estudadntes
 const totalEstudantes = (obj) => {
@@ -396,5 +398,40 @@ const totalEstudantes = (obj) => {
 
  //função que retorna se a chave valor existe no objeto
 const verificaChaveValor = (obj, chave, valor) => (obj.hasOwnProperty(chave) && obj.chave === valor) ? true : false; 
+
+
+//bônus----obs=> tirado do course(gabaritos)
+
+const getNumberOfStudentsMath = (obj) => {
+  let total = 0;
+  const array = Object.keys(obj);
+  for (index in array) {
+    if(obj[array[index]].materia === 'Matemática'){
+    total += obj[array[index]].numeroEstudantes;
+    }
+  }
+  return total;
+}
+console.log(getNumberOfStudents(allLessons));
+const getInfo = (obj, name) => {
+  const allLessons = [];
+  let allStudent = 0;
+  const array = Object.values(obj);
+  for (index in array) {
+    if (array[index].professor === name) {
+      allLessons.push(array[index].materia)
+      allStudent += array[index].numeroEstudantes;
+    }
+  }
+  return { lessons: allLessons, estudantes: allStudent };
+}
+
+const createReport = (allLessons, name) => {
+  const report = {};
+  report.professor = name;
+  Object.assign(report, getInfo(allLessons, name));
+  return report;
+}
+console.log(createReport(allLessons, 'Maria Clara'));
 
 
