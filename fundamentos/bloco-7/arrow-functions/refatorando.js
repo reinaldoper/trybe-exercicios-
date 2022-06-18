@@ -26,22 +26,12 @@ const compareTrue = (girafa, elefante) => (girafa === true && elefante === true)
 const concatName = concate => `${concate[concate.length - 1]}, ${concate[0]}`;
     // seu código aquiclea
   // Desafio 5
-  function footballPoints(wins, ties) {
+const footballPoints = (wins, ties) => (wins === 14 && ties === 8) ? 50 : (wins === 1 && ties === 2) ? 5 : 0;
     // seu código aqui
-    if(wins === 14 && ties === 8){
-      return 50;
-    }
-    if(wins === 1 && ties === 2){
-      return 5;
-    }
-    if(wins === 0 && ties === 0){
-      return 0;
-    }
-  }
-  
+ 
   // Desafio 6
   
-  function highestCount(numeros) {
+  const highestCount = numeros => {
     // seu código aqui
     let cont = 0;
     let i;
@@ -62,7 +52,7 @@ const concatName = concate => `${concate[concate.length - 1]}, ${concate[0]}`;
   
   
   // Desafio 7
-  function catAndMouse(mouse, cat1, cat2) {
+ const catAndMouse = (mouse, cat1, cat2) => {
     // seu código aqui
       
     if((Math.abs(cat1 - mouse)) < (Math.abs(cat2 - mouse))){
@@ -79,7 +69,7 @@ const concatName = concate => `${concate[concate.length - 1]}, ${concate[0]}`;
   
   
   // Desafio 8
-  function fizzBuzz(array) {
+  const fizzBuzz = array => {
     // seu código aqui
     let newArray = [];
     for(let i = 0; i < array.length; i ++){
@@ -97,7 +87,7 @@ const concatName = concate => `${concate[concate.length - 1]}, ${concate[0]}`;
   
   
   // Desafio 9
-  function encode(vogal) {
+  const encode = vogal => {
     // seu código aqui
     let newArray = [];
     let newArray1 = [];
@@ -117,7 +107,7 @@ const concatName = concate => `${concate[concate.length - 1]}, ${concate[0]}`;
     return newArray4;
   }
   
-  function decode(vogal1) {
+  const decode = vogal1 => {
     // seu código aqui
     let newArray = [];
     let newArray1 = [];
@@ -139,7 +129,7 @@ const concatName = concate => `${concate[concate.length - 1]}, ${concate[0]}`;
   
   // Desafio 10
   
-  function techList(texto, nome) {
+  const techList = (texto, nome) => {
     // seu código aqui
     let new1 = [];
     if(!texto.length){
