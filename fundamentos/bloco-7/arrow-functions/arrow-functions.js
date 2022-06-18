@@ -40,10 +40,10 @@ const maior = frase => {
   let palavras = frase.split(' ');
   let bigFor = "";
 for (word of palavras) {
-  if (word.length > bigFor.length) {
-    bigFor = word;
+  if (word.trim().length > bigFor.length) {
+    bigFor = word.trim();
   }
 }
   return bigFor;
 }
-console.log(maior('minha casa é bonita e maravilhosa, paralelepipedo'));
+console.log(maior('minha casa é bonita e maravilhosa, grande paralelepipedo'));

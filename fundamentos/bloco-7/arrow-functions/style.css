@@ -1,0 +1,29 @@
+header {
+    max-width: 1000px;
+    background-color: aqua;
+    text-align: center;
+    margin: auto;
+    padding: 20px;
+}
+
+#botao {
+    width: 100px;
+    
+}
+
+#reset {
+    width: 100px;
+    
+}
+
+#somador {
+    display: flex;
+    flex-direction: row;
+    margin-left: 48%;
+}
+
+#atualiza {
+    margin-top: 0;
+    margin-left: 5px;
+    color: blue;
+}
