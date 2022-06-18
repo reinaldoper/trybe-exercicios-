@@ -16,6 +16,10 @@ header {
     width: 100px;
     
 }
+#decrementa {
+    width: 100px;
+    
+}
 
 #somador {
     display: flex;

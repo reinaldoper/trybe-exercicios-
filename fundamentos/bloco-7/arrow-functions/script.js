@@ -6,5 +6,8 @@ document.querySelector('#botao').addEventListener('click', () => {
 document.querySelector('#reset').addEventListener('click', () => {
     clickCount = 0;
     document.getElementById("atualiza").innerHTML = clickCount;
-})
+});
+document.querySelector('#decrementa').addEventListener('click', () => {
+    document.getElementById("atualiza").innerHTML = --clickCount;
+});
 
