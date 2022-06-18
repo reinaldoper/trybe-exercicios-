@@ -291,11 +291,10 @@ const order = {
   },
 };
 
-const customerInfo = (order) => {
+const customerInfo = (order) => `Olá  ${order.order.delivery.deliveryPerson}, entrega para: ${order.name}, telefone:${order.phoneNumber}, R. ${order.address.street}, N°: ${order.address.number}, AP: ${order.address.apartment}.`;
   //"Olá Ana Silveira, entrega para: Rafael Andrade, Telefone: 11-98763-1416, R. Rua das Flores, Nº: 389, AP: 701".
 
-  return `Olá  ${order.order.delivery.deliveryPerson}, entrega para: ${order.name}, telefone:${order.phoneNumber}, R. ${order.address.street}, N°: ${order.address.number}, AP: ${order.address.apartment}.`;
-}
+
 console.log(customerInfo(order));
 
 
@@ -337,37 +336,29 @@ const lesson3 = {
  
 //1. Crie uma função para adicionar o turno da noite na lesson2. Essa função deve possuir três parâmetros, sendo eles: o objeto a ser modificado, a chave que deverá ser adicionada e o valor dela.
 
- function addLesson2(obj, key, value) {
+ const addLesson2 = (obj, key, value) => {
   let newKey = key;
   obj[newKey] = value;
-  console.log(obj);
+   return obj;
 }
 console.log(addLesson2(lesson2, key, value));
 
 //2.Crie uma função para listar as keys de um objeto. Essa função deve receber um objeto como parâmetro.
-function listaKeys(obj) {
-  return Object.keys(obj);
-}
+const listaKeys = obj => Object.keys(obj);
 
 //3.Crie uma função para mostrar o tamanho de um objeto.
-function tamanhoObj(obj) {
-  return Object.keys(obj).length;
-}
+const tamanhoObj = obj => Object.keys(obj).length;
 
 //4.Crie uma função para listar os valores de um objeto. Essa função deve receber um objeto como parâmetro.
-function valoresObj(obj) {
-  return Object.values(obj);
-}
+const valoresObj = obj => Object.values(obj);
+
 //5.Crie um objeto de nome allLessons, que deve agrupar todas as aulas através do Object.assign. Cada chave desse novo objeto será uma aula, sendo essas chaves: lesson1, lesson2 e lesson3. Ao executar o comando console.log(allLessons), a saída deverá ser a seguinte:
 
 const alls = Object.assign(lesson1)
 const alls1 = Object.assign(lesson2)
 const alls2 = Object.assign(lesson3)
 
-const allLessons = {
-  lesson1: alls,
-  lesson2: alls1,
-  lesson3: alls2,
-};
-;
-console.log(Object.assign(allLessons));
+const allLessons = (alls, alls1, alls2) => Object.assign(alls, alls1, alls2);
+ 
+
+
