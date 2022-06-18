@@ -1,16 +1,11 @@
 // Desafio 1
 
-function compareTrue(girafa, elefante) {
+const compareTrue = (girafa, elefante) => (girafa === true && elefante === true) ? true : false;
     // seu código aqui
-    if(girafa === true && elefante === true){
-      return true;
-    }else{
-      return false;
-    }
-  }
+    
   
   // Desafio 2
-  function calcArea(base, height) {
+  const  calcArea = (base, height) => {
     // seu código aqui
     if(base === 10 && height === 50){
       return (base * height)/2;
@@ -24,18 +19,12 @@ function compareTrue(girafa, elefante) {
   }
   
   // Desafio 3
-  function splitSentence(nome) {
+  const splitSentence = nome => nome.split(' ');
     // seu código aqui
-     return nome.split(' ');
-  }
-  
+  console.log(splitSentence('Meu querido Brasil!'));
   // Desafio 4
-  function concatName(concate) {
+const concatName = concate => `${concate[concate.length - 1]}, ${concate[0]}`;
     // seu código aquiclea
-  
-    return concate[concate.length -1]+", "+concate[0];
-  }
-  
   // Desafio 5
   function footballPoints(wins, ties) {
     // seu código aqui
