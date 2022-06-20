@@ -139,18 +139,22 @@ const professionalBoard = [
 ];
 
 // Pesquisa
-function searchEmployee (item) {
-
+const searchEmployee = (item,[firstName, lastName, specialities])=> {
+  let b = professionalBoard.find(p => p.firstName === firstName && p.lastName === lastName && p.specialities.includes(specialities));
   let a = professionalBoard.find(p => p.id === item);
   const retorno = undefined;
   let msg = '';
   if (a === retorno) {
     msg = "ID não identificada";
     return msg;
-  } else {
+  } else  if (b === retorno) {
+    msg = "Informação não identificada";
+    return msg;
+  }else {
     return a;
   }
 };
+console.log(searchEmployee('9852-2-2', ['Jeff', 'Cook', 'Ruby']));
 
   
   // implemente seus testes aqui
