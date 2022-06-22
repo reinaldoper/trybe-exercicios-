@@ -1,0 +1,12 @@
+.center{
+    text-align: center;
+}
+ol:hover{
+    background-color: aqua;
+}
+li:active{
+    font-style: red;
+}
+ul, ol{
+    list-style:none;
+}

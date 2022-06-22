@@ -1,4 +1,8 @@
+exercicios/7.3
 const sum = (a, b) => {
+
+const  sum = (a, b) => {
+master
     if (typeof a !== 'number' || typeof b !== 'number') {
       throw new Error('parameters must be numbers');
     }
@@ -139,6 +143,7 @@ const professionalBoard = [
 ];
 
 // Pesquisa
+exercicios/7.3
 const searchEmployee = (item, [firstName, lastName, specialities]) => {
   try {
     let b = professionalBoard.find(p => p.firstName === firstName && p.lastName === lastName && p.specialities.includes(specialities));
@@ -156,6 +161,18 @@ const searchEmployee = (item, [firstName, lastName, specialities]) => {
     }
   } catch (error) {
     return error.message;
+
+const searchEmployee = item => {
+
+  let a = professionalBoard.find(p => p.id === item);
+  const retorno = undefined;
+  let msg = '';
+  if (a === retorno) {
+    msg = "ID não identificada";
+    return msg;
+  } else {
+    return a;
+master
   }
 };
 console.log(searchEmployee('9852-2-2', ['Jeff', 'Cook', 'Ruby']));
