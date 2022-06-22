@@ -143,11 +143,20 @@ describe('Requisito Bônus', () => {
             firstName: 'Jeff',
             lastName: 'Cook',
             specialities: ['Ruby', 'SQL'],
-          }).toEqual(searchEmployee('9852-2-2'));
+          }).toEqual(searchEmployee('9852-2-2', ['Jeff', 'Cook','Ruby']));
       });
-    it('Testa se searchEmployee retorna ID não identificada', () => {
-        expect('ID não identificada').toEqual(searchEmployee('9852-2'))
-    })
+  it('Testa se searchEmployee retorna ID não identificada', () => {
+    expect('ID não identificada').toEqual(searchEmployee('9852-2', ['Jeff', 'Cook','Ruby']))
+  });
+  it('Testa se searchEmployee retorna Informação não identificada', () => {
+    expect('Informação não identificada').toEqual(searchEmployee('9852-2-2', ['Jef', 'Cook', 'Ruby']))
+  });
+  it('Testa se searchEmployee retorna Informação não identificada', () => {
+    expect('Informação não identificada').toEqual(searchEmployee('9852-2-2', ['Jeff', 'Coo','Ruby']))
+  });
+  it('Testa se searchEmployee retorna Informação não identificada', () => {
+    expect('Informação não identificada').toEqual(searchEmployee('9852-2-2', ['Jeff', 'Cook','Rub']))
+  });
 })
 
 
