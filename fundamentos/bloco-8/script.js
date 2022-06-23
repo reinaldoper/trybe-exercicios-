@@ -42,7 +42,118 @@ console.log(sorteio(4, verifica));
 //Crie uma HOF que receberá três parâmetros. O primeiro será um array de respostas corretas (Gabarito), o segundo será um array de respostas a serem verificadas (respostas da pessoa estudante) e o terceiro é uma função que checa se as respostas estão corretas e faz a contagem da pontuação final recebida pela pessoa estudante. Ao final a HOF deve retornar o total da contagem de respostas certas.
 //Quando a resposta for correta a contagem sobe 1 ponto, quando for incorreta desce 0.5 pontos, e quando não houver resposta ("N.A") não altera-se a contagem.
 const RIGHT_ANSWERS = ['A', 'C', 'B', 'D', 'A', 'A', 'D', 'A', 'D', 'C'];
+/* const arr = ["pera", "limao", "banana", "goiaba"];
+const bb = ["tomate", "tangerina", "pera", "melancia"]; */
 const STUDENT_ANSWERS = ['A', 'N.A', 'B', 'D', 'A', 'C', 'N.A', 'A', 'D', 'B'];
 
-const 
+/* const hof = (arrayCorretas, arrayVerificar, callback) => {
 
+} */
+
+const checa = (arrayCorretas, arrayVerificar) => {
+    let acertos = [];
+    for (let i = 0; i < arrayCorretas.length; i += 1) {
+       
+        for (let j = 0; j < arrayVerificar.length; j += 1) {
+            
+            if (arrayVerificar[j] === arrayCorretas[i]) {
+                acertos.push(arrayVerificar[j]);
+            }
+        }
+    } return acertos;
+};
+console.log(checa(RIGHT_ANSWERS, STUDENT_ANSWERS));
+
+const RIGHT = ['A', 'C', 'B', 'D', 'A', 'A', 'D', 'A', 'D', 'C'];
+/* const arr = ["pera", "limao", "banana", "goiaba"];
+const bb = ["tomate", "tangerina", "pera", "melancia"]; */
+const STUDENT = ['A', 'N.A', 'B', 'D', 'A', 'C', 'N.A', 'A', 'D', 'B'];
+
+
+function validarDiferenca()
+    {
+        var r1 = [2,4,6,8,5,7,9,10];
+        var r2 = [2,4,6,8,5,7,9,1];       
+        var r3 =[];
+        r1.forEach(function (element) {
+            if(r2.indexOf(element) == -1)
+               r3.push(element);
+        });
+
+        return r3;
+    }
+
+
+console.log(validarDiferenca());  
+ 
+ //conteúdo dia 8.2
+ const students1 = [
+    { name: 'Maria', grade: 70, approved: '' },
+    { name: 'José', grade: 56, approved: '' },
+    { name: 'Roberto', grade: 90, approved: '' },
+    { name: 'Ana', grade: 81, approved: '' },
+  ];
+  
+  function verifyGrades() {
+    for (let i = 0; i < students1.length; i += 1) {
+      const student = students1[i];
+      if (student.grade >= 60) {
+        student.approved = 'Aprovado';
+      } else {
+        student.approved = 'Recuperação';
+      }
+    }
+  }
+  
+  verifyGrades();
+  
+  console.log(students);
+  // [
+  //   { name: 'Maria', grade: 70, approved: 'Aprovado' },
+  //   { name: 'José', grade: 56, approved: 'Recuperação' },
+  //   { name: 'Roberto', grade: 90, approved: 'Aprovado' },
+  //   { name: 'Ana', grade: 81, approved: 'Aprovado' }
+  // ]
+
+  const students = [
+    { name: 'Maria', grade: 70, approved: '' },
+    { name: 'José', grade: 56, approved: '' },
+    { name: 'Roberto', grade: 90, approved: '' },
+    { name: 'Ana', grade: 81, approved: '' },
+  ];
+  
+  function verifyGrades() {
+    students.forEach((student, index) => {
+      if (student.grade >= 60) {
+        students[index].approved = 'Aprovado';
+      } else {
+        students[index].approved = 'Recuperação';
+      }
+    });
+  }
+  
+  verifyGrades();
+  
+  console.log(students);
+  // [
+  //   { name: 'Maria', grade: 70, approved: 'Aprovado' },
+  //   { name: 'José', grade: 56, approved: 'Recuperação' },
+  //   { name: 'Roberto', grade: 90, approved: 'Aprovado' },
+  //   { name: 'Ana', grade: 81, approved: 'Aprovado' }
+  // ]
+  const numbers = [11, 24, 39, 47, 50, 62, 75, 81, 96, 100];
+let firstMultipleOf5;
+for (let index = 0; index < numbers.length; index += 1) {
+  if (numbers[index] % 5 === 0) {
+    firstMultipleOf5 = numbers[index];
+    break;
+  }
+}
+
+console.log(firstMultipleOf5);
+// 50
+const numberss = [11, 24, 39, 47, 50, 62, 75, 81, 96, 100];
+const firstMultipleOf5s = numberss.find((number) => number % 5 === 0);
+
+console.log(firstMultipleOf5s);
+// 50
