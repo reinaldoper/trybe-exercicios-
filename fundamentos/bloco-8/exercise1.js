@@ -171,3 +171,23 @@ function everyoneWasBornOnSecXX() {
   // escreva seu código aqui
 }
 console.log(everyoneWasBornOnSecXX());
+
+//Faça uma função que retorne true, se algum livro foi lançado na década de 80, e false, caso contrário.
+const expectedResultes = true;
+
+const someBookWasReleaseOnThe80s = () => {
+  const result = expectedResults.some((book) => (book.releaseYear >= 1980 && book.releaseYear <= 1989) ? true : false);
+  return result;
+  // escreva seu código aqui
+}
+console.log(someBookWasReleaseOnThe80s());
+
+//Faça uma função que retorne true, caso nenhum author tenha nascido no mesmo ano, e false, caso contrário.
+const expectedResultss = false;
+
+function authorUnique() {
+  const result = expectedResults.every((book) => (book.author.birthYear === book.author.birthYear) ? true : false);
+  return result;
+  // escreva seu código aqui
+}
+console.log(authorUnique());
