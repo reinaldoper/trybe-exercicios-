@@ -9,22 +9,22 @@ console.log(doingThings(dormir));
 // Crie uma função que retorne um objeto no formato { nomeCompleto, email } representando uma nova pessoa contratada. Passe sua função como parâmetro da HOF newEmployees para criar cada pessoa contratada em seu respectivo id. A sua função deve receber como parâmetro o nome completo da pessoa funcionária e a partir dele gerar automaticamente um email no formato nome_da_pessoa@trybe.com.
 
 const newEmployees = (callback) => {
-    const employees = {
-      id1: callback('Pedro Guerra'), // Nome: Pedro Guerra -> Chame sua função passando o nome Pedro Guerra como parâmetro, substituindo as aspas
-      id2: callback('Luiza Drumond'), // Nome: Luiza Drumond -> Chame sua função passando o nome Luiza Drumond como parâmetro, substituindo as aspas
-      id3: callback('Carla Paiva'), // Nome: Carla Paiva -> Chame sua função passando o nome Carla Paiva como parâmetro, substituindo as aspas
-    }
-    return employees;
+  const employees = {
+    id1: callback('Pedro Guerra'), // Nome: Pedro Guerra -> Chame sua função passando o nome Pedro Guerra como parâmetro, substituindo as aspas
+    id2: callback('Luiza Drumond'), // Nome: Luiza Drumond -> Chame sua função passando o nome Luiza Drumond como parâmetro, substituindo as aspas
+    id3: callback('Carla Paiva'), // Nome: Carla Paiva -> Chame sua função passando o nome Carla Paiva como parâmetro, substituindo as aspas
+  }
+  return employees;
 };
-  
+
 const cadastro = (name) => {
-    let emails = name.replace(' ', '');
-    let minusculo = emails.toLowerCase();
-    let obj = {
-        nomeCompleto: name,
-        email: `${minusculo}@trybe.com`,
-    };
-    return obj;
+  let emails = name.replace(' ', '');
+  let minusculo = emails.toLowerCase();
+  let obj = {
+    nomeCompleto: name,
+    email: `${minusculo}@trybe.com`,
+  };
+  return obj;
 }
 
 console.log(newEmployees(cadastro));
@@ -32,12 +32,12 @@ console.log(newEmployees(cadastro));
 //Desenvolva uma HOF que retorna o resultado de um sorteio. Esta HOF irá gerar um número aleatório entre 1 e 5 recebendo como parâmetros o número apostado e uma função que checa se o número apostado é igual ao número sorteado. O retorno da sua HOF deve ser uma string (Ex: "Tente novamente" ou "Parabéns você ganhou").
 
 const sorteio = (num, callback) => {
-    let result = Math.floor(Math.random() * 5 + 1);
-    return callback(result, num);
+  let result = Math.floor(Math.random() * 5 + 1);
+  return callback(result, num);
 
 }
 
-const verifica = (result, num) => (result === num) ? 'Parabéns você ganhou' : 'Tente novamente'; 
+const verifica = (result, num) => (result === num) ? 'Parabéns você ganhou' : 'Tente novamente';
 console.log(sorteio(4, verifica));
 //Crie uma HOF que receberá três parâmetros. O primeiro será um array de respostas corretas (Gabarito), o segundo será um array de respostas a serem verificadas (respostas da pessoa estudante) e o terceiro é uma função que checa se as respostas estão corretas e faz a contagem da pontuação final recebida pela pessoa estudante. Ao final a HOF deve retornar o total da contagem de respostas certas.
 //Quando a resposta for correta a contagem sobe 1 ponto, quando for incorreta desce 0.5 pontos, e quando não houver resposta ("N.A") não altera-se a contagem.
@@ -51,16 +51,17 @@ const STUDENT_ANSWERS = ['A', 'N.A', 'B', 'D', 'A', 'C', 'N.A', 'A', 'D', 'B'];
 } */
 
 const checa = (arrayCorretas, arrayVerificar) => {
-    let acertos = [];
-    for (let i = 0; i < arrayCorretas.length; i += 1) {
-       
-        for (let j = 0; j < arrayVerificar.length; j += 1) {
-            
-            if (arrayVerificar[j] === arrayCorretas[i]) {
-                acertos.push(arrayVerificar[j]);
-            }
-        }
-    } return acertos;
+  let acertos = [];
+  for (let i = 0; i < arrayCorretas.length; i += 1) {
+
+    for (let j = 0; j < arrayVerificar.length; j += 1) {
+
+      if (arrayVerificar[j] === arrayCorretas[i]) {
+        acertos.push(arrayVerificar[j]);
+      }
+    }
+  }
+  return acertos;
 };
 console.log(checa(RIGHT_ANSWERS, STUDENT_ANSWERS));
 
@@ -70,78 +71,107 @@ const bb = ["tomate", "tangerina", "pera", "melancia"]; */
 const STUDENT = ['A', 'N.A', 'B', 'D', 'A', 'C', 'N.A', 'A', 'D', 'B'];
 
 
-function validarDiferenca()
-    {
-        var r1 = [2,4,6,8,5,7,9,10];
-        var r2 = [2,4,6,8,5,7,9,1];       
-        var r3 =[];
-        r1.forEach(function (element) {
-            if(r2.indexOf(element) == -1)
-               r3.push(element);
-        });
+function validarDiferenca() {
+  var r1 = [2, 4, 6, 8, 5, 7, 9, 10];
+  var r2 = [2, 4, 6, 8, 5, 7, 9, 1];
+  var r3 = [];
+  r1.forEach(function (element) {
+    if (r2.indexOf(element) == -1)
+      r3.push(element);
+  });
 
-        return r3;
-    }
+  return r3;
+}
 
 
-console.log(validarDiferenca());  
- 
- //conteúdo dia 8.2
- const students1 = [
-    { name: 'Maria', grade: 70, approved: '' },
-    { name: 'José', grade: 56, approved: '' },
-    { name: 'Roberto', grade: 90, approved: '' },
-    { name: 'Ana', grade: 81, approved: '' },
-  ];
-  
-  function verifyGrades() {
-    for (let i = 0; i < students1.length; i += 1) {
-      const student = students1[i];
-      if (student.grade >= 60) {
-        student.approved = 'Aprovado';
-      } else {
-        student.approved = 'Recuperação';
-      }
+console.log(validarDiferenca());
+
+//conteúdo dia 8.2
+const students1 = [{
+    name: 'Maria',
+    grade: 70,
+    approved: ''
+  },
+  {
+    name: 'José',
+    grade: 56,
+    approved: ''
+  },
+  {
+    name: 'Roberto',
+    grade: 90,
+    approved: ''
+  },
+  {
+    name: 'Ana',
+    grade: 81,
+    approved: ''
+  },
+];
+
+function verifyGrades() {
+  for (let i = 0; i < students1.length; i += 1) {
+    const student = students1[i];
+    if (student.grade >= 60) {
+      student.approved = 'Aprovado';
+    } else {
+      student.approved = 'Recuperação';
     }
   }
-  
-  verifyGrades();
-  
-  console.log(students);
-  // [
-  //   { name: 'Maria', grade: 70, approved: 'Aprovado' },
-  //   { name: 'José', grade: 56, approved: 'Recuperação' },
-  //   { name: 'Roberto', grade: 90, approved: 'Aprovado' },
-  //   { name: 'Ana', grade: 81, approved: 'Aprovado' }
-  // ]
+}
 
-  const students = [
-    { name: 'Maria', grade: 70, approved: '' },
-    { name: 'José', grade: 56, approved: '' },
-    { name: 'Roberto', grade: 90, approved: '' },
-    { name: 'Ana', grade: 81, approved: '' },
-  ];
-  
-  function verifyGrades() {
-    students.forEach((student, index) => {
-      if (student.grade >= 60) {
-        students[index].approved = 'Aprovado';
-      } else {
-        students[index].approved = 'Recuperação';
-      }
-    });
-  }
-  
-  verifyGrades();
-  
-  console.log(students);
-  // [
-  //   { name: 'Maria', grade: 70, approved: 'Aprovado' },
-  //   { name: 'José', grade: 56, approved: 'Recuperação' },
-  //   { name: 'Roberto', grade: 90, approved: 'Aprovado' },
-  //   { name: 'Ana', grade: 81, approved: 'Aprovado' }
-  // ]
-  const numbers = [11, 24, 39, 47, 50, 62, 75, 81, 96, 100];
+verifyGrades();
+
+console.log(students);
+// [
+//   { name: 'Maria', grade: 70, approved: 'Aprovado' },
+//   { name: 'José', grade: 56, approved: 'Recuperação' },
+//   { name: 'Roberto', grade: 90, approved: 'Aprovado' },
+//   { name: 'Ana', grade: 81, approved: 'Aprovado' }
+// ]
+
+const students = [{
+    name: 'Maria',
+    grade: 70,
+    approved: ''
+  },
+  {
+    name: 'José',
+    grade: 56,
+    approved: ''
+  },
+  {
+    name: 'Roberto',
+    grade: 90,
+    approved: ''
+  },
+  {
+    name: 'Ana',
+    grade: 81,
+    approved: ''
+  },
+];
+
+function verifyGrades() {
+  students.forEach((student, index) => {
+    if (student.grade >= 60) {
+      students[index].approved = 'Aprovado';
+    } else {
+      students[index].approved = 'Recuperação';
+    }
+  });
+}
+
+verifyGrades();
+
+console.log(students);
+// [
+//   { name: 'Maria', grade: 70, approved: 'Aprovado' },
+//   { name: 'José', grade: 56, approved: 'Recuperação' },
+//   { name: 'Roberto', grade: 90, approved: 'Aprovado' },
+//   { name: 'Ana', grade: 81, approved: 'Aprovado' }
+// ]
+const numbers = [11, 24, 39, 47, 50, 62, 75, 81, 96, 100];
 let firstMultipleOf5;
 for (let index = 0; index < numbers.length; index += 1) {
   if (numbers[index] % 5 === 0) {
@@ -176,12 +206,26 @@ const hasName = (arr, name) => {
 
 console.log(hasName(names, 'Ana'))
 
-const people = [
-  { name: 'Mateus', age: 18 },
-  { name: 'José', age: 16 },
-  { name: 'Ana', age: 23 },
-  { name: 'Cláudia', age: 20 },
-  { name: 'Bruna', age: 19 },
+const people = [{
+    name: 'Mateus',
+    age: 18
+  },
+  {
+    name: 'José',
+    age: 16
+  },
+  {
+    name: 'Ana',
+    age: 23
+  },
+  {
+    name: 'Cláudia',
+    age: 20
+  },
+  {
+    name: 'Bruna',
+    age: 19
+  },
 ];
 
 const verifyAges = (arr, minimumAge) => {

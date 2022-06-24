@@ -157,6 +157,17 @@ const expectedResults = [
   },
 ];
 
-const booksOrderedByReleaseYearDesc = () => expectedResults.sort((a, b) => a.releaseYear - b.releaseYear);
+const booksOrderedByReleaseYearDesc = () => expectedResults.sort((a, b) => a.author.birthYear - b.author.birthYear);
 
 console.log(booksOrderedByReleaseYearDesc());
+
+//Faça uma função que retorne true, se todas as pessoas autoras nasceram no século XX, ou false, caso contrário.
+
+const expectedResul = false;
+
+function everyoneWasBornOnSecXX() {
+  const firstMultipleOf5s = expectedResults.every((number) => (number.author.birthYear >= 1900 && number.author.birthYear <= 2000) ? true : false);
+  return firstMultipleOf5s;
+  // escreva seu código aqui
+}
+console.log(everyoneWasBornOnSecXX());
