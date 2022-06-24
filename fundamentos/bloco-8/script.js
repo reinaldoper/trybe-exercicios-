@@ -157,3 +157,35 @@ const firstMultipleOf5s = numberss.find((number) => number % 5 === 0);
 
 console.log(firstMultipleOf5s);
 // 50
+
+const food = ['arroz', 'feijão', 'farofa', 'chocolate', 'doce de leite'];
+food.sort();
+console.log(food);
+// [ 'arroz', 'chocolate', 'doce de leite', 'farofa', 'feijão' ]
+
+const points = [40, 100, 1, 5, 25, 10];
+points.sort((a, b) => b - a);
+console.log(points); // [ 100, 40, 25, 10, 5, 1 ]
+
+//exercicios para fixar
+const names = ['Mateus', 'José', 'Ana', 'Cláudia', 'Bruna'];
+
+const hasName = (arr, name) => {
+  //Adicione seu código aqui
+}
+
+console.log(hasName(names, 'Ana'))
+
+const people = [
+  { name: 'Mateus', age: 18 },
+  { name: 'José', age: 16 },
+  { name: 'Ana', age: 23 },
+  { name: 'Cláudia', age: 20 },
+  { name: 'Bruna', age: 19 },
+];
+
+const verifyAges = (arr, minimumAge) => {
+  //Adicione seu código aqui
+}
+
+console.log(verifyAges(people, 18));
