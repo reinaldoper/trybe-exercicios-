@@ -50,38 +50,26 @@ const STUDENT_ANSWERS = ['A', 'N.A', 'B', 'D', 'A', 'C', 'N.A', 'A', 'D', 'B'];
 
 } */
 
-const checa = (arrayCorretas, arrayVerificar) => {
-  let acertos = [];
-  for (let i = 0; i < arrayCorretas.length; i += 1) {
+const checa = (arrayCorretas, arrayVerificar, callback) => {
+  return callback(arrayCorretas, arrayVerificar);
+};
 
-    for (let j = 0; j < arrayVerificar.length; j += 1) {
-
-      if (arrayVerificar[j] === arrayCorretas[i]) {
-        acertos.push(arrayVerificar[j]);
+const valida = (array, array1) => {
+  let contAcertos = 0;
+  if (array.length === array1.length) {
+    for (let i = 0; i < array.length; i += 1){
+      if (array[i] === array1[i]) {
+        contAcertos += 1;
+      }
+      if (array[i] !== array1[i]) {
+        contAcertos -= 0.5;
       }
     }
   }
-  return acertos;
-};
-console.log(checa(RIGHT_ANSWERS, STUDENT_ANSWERS));
-
-const RIGHT = ['A', 'C', 'B', 'D', 'A', 'A', 'D', 'A', 'D', 'C'];
-/* const arr = ["pera", "limao", "banana", "goiaba"];
-const bb = ["tomate", "tangerina", "pera", "melancia"]; */
-const STUDENT = ['A', 'N.A', 'B', 'D', 'A', 'C', 'N.A', 'A', 'D', 'B'];
-
-
-function validarDiferenca() {
-  var r1 = [2, 4, 6, 8, 5, 7, 9, 10];
-  var r2 = [2, 4, 6, 8, 5, 7, 9, 1];
-  var r3 = [];
-  r1.forEach(function (element) {
-    if (r2.indexOf(element) == -1)
-      r3.push(element);
-  });
-
-  return r3;
+  return contAcertos;
 }
+console.log(checa(RIGHT_ANSWERS, STUDENT_ANSWERS, valida));
+
 
 
 console.log(validarDiferenca());
@@ -302,8 +290,8 @@ console.log(findNameWithFiveLetters());
 const nome = ['Mateus', 'José', 'Ana', 'Cláudia', 'Bruna'];
 
 const hasNames = (arr, name) => {
-  const result = arr.some((nomeList) => nomeList === name ? true : false);
-  return result;
+  return arr.some((nomeList) => nomeList === name ? true : false);
+  
   //Adicione seu código aqui
 }
 
