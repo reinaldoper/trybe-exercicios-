@@ -200,7 +200,14 @@ console.log(points); // [ 100, 40, 25, 10, 5, 1 ]
 //exercicios para fixar
 const names = ['Mateus', 'José', 'Ana', 'Cláudia', 'Bruna'];
 
-const hasName = (arr, name) => {
+const hasName = (arr, nome) => {
+  const result = [];
+  arr.forEach((name) => {
+    if (name  === nome) {
+      result.push(name);
+    }
+  });
+  return result;
   //Adicione seu código aqui
 }
 
@@ -229,7 +236,64 @@ const people = [{
 ];
 
 const verifyAges = (arr, minimumAge) => {
+  const result = [];
+  arr.forEach((idade) => {
+    if (idade.age <= minimumAge) {
+      result.push(idade);
+    }
+  });
+  return result;
   //Adicione seu código aqui
 }
 
 console.log(verifyAges(people, 18));
+
+// Use o método forEach chamando a callback showEmailList para apresentar os emails
+const emailListInData = [
+  'roberta@email.com',
+  'paulo@email.com',
+  'anaroberta@email.com',
+  'fabiano@email.com',
+];
+
+const showEmailList = (email) => {
+  const result = [];
+  email.forEach((dados) => {
+    result.push(`${dados}`);
+  })
+  return result;
+  
+};
+console.log(showEmailList(emailListInData));
+
+// Adicione seu código aqui
+
+//3 - Utilize o find para encontrar a música com id igual a 31031685, caso ela exista:
+const musicas = [
+  { id: '31031685', title: 'Partita in C moll BWV 997' },
+  { id: '31031686', title: 'Toccata and Fugue, BWV 565' },
+  { id: '31031687', title: 'Chaconne, Partita No. 2 BWV 1004' },
+]
+
+function findMusic(id) {
+  const result = [];
+  musicas.find((ids) => {
+    if (ids.id === id) {
+      result.push(ids.title);
+    }
+  }); return result;
+  // Adicione seu código aqui
+}
+
+console.log(findMusic('31031685'))
+
+// Utilize o find para encontrar o primeiro nome com cinco letras, caso ele exista:
+const nomes = ['João', 'Irene', 'Fernando', 'Maria'];
+
+const findNameWithFiveLetters = () => {
+  const result = nomes.find((nome) => nome.length === 5);
+  return result;
+  // Adicione seu código aqui:
+}
+
+console.log(findNameWithFiveLetters());
