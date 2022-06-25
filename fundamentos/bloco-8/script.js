@@ -239,7 +239,7 @@ const verifyAges = (arr, minimumAge) => {
   const result = [];
   arr.forEach((idade) => {
     if (idade.age <= minimumAge) {
-      result.push(idade);
+      result.push(idade.name);
     }
   });
   return result;
@@ -297,3 +297,14 @@ const findNameWithFiveLetters = () => {
 }
 
 console.log(findNameWithFiveLetters());
+
+//1 - Escreva uma função que dado um array de nomes e um nome retorne true se ele estiver contido e caso contrário, retorne false, use some;
+const nome = ['Mateus', 'José', 'Ana', 'Cláudia', 'Bruna'];
+
+const hasNames = (arr, name) => {
+  const result = arr.some((nomeList) => nomeList === name ? true : false);
+  return result;
+  //Adicione seu código aqui
+}
+
+console.log(hasNames(nome, 'Ana'))
