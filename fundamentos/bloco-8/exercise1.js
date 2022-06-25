@@ -233,7 +233,7 @@ const bookss = [
   },
 ];
 const expectedResultss = false;
-
+//solução retirada do course
 function authorUnique() {
   return bookss.every((book) =>
     !bookss.some((bookSome) =>
