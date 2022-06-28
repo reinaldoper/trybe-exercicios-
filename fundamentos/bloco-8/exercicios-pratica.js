@@ -213,12 +213,13 @@ const expectedRes = [
   ];
   
 const fantasyOrScienceFictionAuthors = () => {
-    const book = books.map((filtro) => {
+    const book = books.filter((filtro) => {
         if (filtro.genre === 'Ficção Científica' || filtro.genre === 'Fantasia') {
-            return filtro.author.name;
+            return filtro;
         }
     });
-    book.sort((a, b) => a - b);
+  book.map((book) => book.author.name);
+  book.sort();
     console.log(book);
     return book;
     // escreva seu código aqui
@@ -232,7 +233,7 @@ console.log(fantasyOrScienceFictionAuthors());
     'O Chamado de Cthulhu',
   ];
   
-function oldBooks() {
+const oldBooks = () => {
     const result = books.map((filtros) => {
         if ((2022 - filtros.releaseYear) > 60) {
             return filtros.name;
@@ -242,3 +243,18 @@ function oldBooks() {
     // escreva seu código aqui
 }
   console.log(oldBooks());
+
+  // Encontre o nome do livro escrito pela pessoa cujo nome registrado começa com três iniciais
+  //Dica: cada inicial termina com um ponto.
+  const expected = 'O Senhor dos Anéis';
+
+const authorWith3DotsOnName = () => {
+    const result = books.map((filtros) => {
+        if (filtros.author.name === 'J. R. R. Tolkien') {
+            return filtros.name;
+          }
+    })
+    return result;
+  // escreva seu código aqui
+}
+console.log(authorWith3DotsOnName());

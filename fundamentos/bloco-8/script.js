@@ -50,38 +50,26 @@ const STUDENT_ANSWERS = ['A', 'N.A', 'B', 'D', 'A', 'C', 'N.A', 'A', 'D', 'B'];
 
 } */
 
-const checa = (arrayCorretas, arrayVerificar) => {
-  let acertos = [];
-  for (let i = 0; i < arrayCorretas.length; i += 1) {
+const checa = (arrayCorretas, arrayVerificar, callback) => {
+  return callback(arrayCorretas, arrayVerificar);
+};
 
-    for (let j = 0; j < arrayVerificar.length; j += 1) {
-
-      if (arrayVerificar[j] === arrayCorretas[i]) {
-        acertos.push(arrayVerificar[j]);
+const valida = (array, array1) => {
+  let contAcertos = 0;
+  if (array.length === array1.length) {
+    for (let i = 0; i < array.length; i += 1){
+      if (array[i] === array1[i]) {
+        contAcertos += 1;
+      }
+      if (array[i] !== array1[i]) {
+        contAcertos -= 0.5;
       }
     }
   }
-  return acertos;
-};
-console.log(checa(RIGHT_ANSWERS, STUDENT_ANSWERS));
-
-const RIGHT = ['A', 'C', 'B', 'D', 'A', 'A', 'D', 'A', 'D', 'C'];
-/* const arr = ["pera", "limao", "banana", "goiaba"];
-const bb = ["tomate", "tangerina", "pera", "melancia"]; */
-const STUDENT = ['A', 'N.A', 'B', 'D', 'A', 'C', 'N.A', 'A', 'D', 'B'];
-
-
-function validarDiferenca() {
-  var r1 = [2, 4, 6, 8, 5, 7, 9, 10];
-  var r2 = [2, 4, 6, 8, 5, 7, 9, 1];
-  var r3 = [];
-  r1.forEach(function (element) {
-    if (r2.indexOf(element) == -1)
-      r3.push(element);
-  });
-
-  return r3;
+  return contAcertos;
 }
+console.log(checa(RIGHT_ANSWERS, STUDENT_ANSWERS, valida));
+
 
 
 console.log(validarDiferenca());
@@ -200,7 +188,14 @@ console.log(points); // [ 100, 40, 25, 10, 5, 1 ]
 //exercicios para fixar
 const names = ['Mateus', 'José', 'Ana', 'Cláudia', 'Bruna'];
 
-const hasName = (arr, name) => {
+const hasName = (arr, nome) => {
+  const result = [];
+  arr.forEach((name) => {
+    if (name  === nome) {
+      result.push(name);
+    }
+  });
+  return result;
   //Adicione seu código aqui
 }
 
@@ -229,7 +224,75 @@ const people = [{
 ];
 
 const verifyAges = (arr, minimumAge) => {
+  const result = [];
+  arr.forEach((idade) => {
+    if (idade.age <= minimumAge) {
+      result.push(idade.name);
+    }
+  });
+  return result;
   //Adicione seu código aqui
 }
 
 console.log(verifyAges(people, 18));
+
+// Use o método forEach chamando a callback showEmailList para apresentar os emails
+const emailListInData = [
+  'roberta@email.com',
+  'paulo@email.com',
+  'anaroberta@email.com',
+  'fabiano@email.com',
+];
+
+const showEmailList = (email) => {
+  const result = [];
+  email.forEach((dados) => {
+    result.push(`${dados}`);
+  })
+  return result;
+  
+};
+console.log(showEmailList(emailListInData));
+
+// Adicione seu código aqui
+
+//3 - Utilize o find para encontrar a música com id igual a 31031685, caso ela exista:
+const musicas = [
+  { id: '31031685', title: 'Partita in C moll BWV 997' },
+  { id: '31031686', title: 'Toccata and Fugue, BWV 565' },
+  { id: '31031687', title: 'Chaconne, Partita No. 2 BWV 1004' },
+]
+
+function findMusic(id) {
+  const result = [];
+  musicas.find((ids) => {
+    if (ids.id === id) {
+      result.push(ids.title);
+    }
+  }); return result;
+  // Adicione seu código aqui
+}
+
+console.log(findMusic('31031685'))
+
+// Utilize o find para encontrar o primeiro nome com cinco letras, caso ele exista:
+const nomes = ['João', 'Irene', 'Fernando', 'Maria'];
+
+const findNameWithFiveLetters = () => {
+  const result = nomes.find((nome) => nome.length === 5);
+  return result;
+  // Adicione seu código aqui:
+}
+
+console.log(findNameWithFiveLetters());
+
+//1 - Escreva uma função que dado um array de nomes e um nome retorne true se ele estiver contido e caso contrário, retorne false, use some;
+const nome = ['Mateus', 'José', 'Ana', 'Cláudia', 'Bruna'];
+
+const hasNames = (arr, name) => {
+  return arr.some((nomeList) => nomeList === name ? true : false);
+  
+  //Adicione seu código aqui
+}
+
+console.log(hasNames(nome, 'Ana'))
