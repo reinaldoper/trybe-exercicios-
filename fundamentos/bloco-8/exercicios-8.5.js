@@ -215,10 +215,11 @@ const people = [{
         nationality: 'Brazilian',
     },
 ];
-const filterPeople = (obj) => {
-    const result = obj.filter((item) => (item.nationality === 'Australian' && (item.bornIn >= 1900 || item.bornIn <= 200))).map((nome) => nome.name);
-    return result;
-}
+const filterPeople = (arr) => arr.filter(
+    ({ nationality, bornIn }) =>
+      nationality === 'Australian'
+      && bornIn > 1900 && bornIn <= 2000,
+    );
 
 console.log(filterPeople(people));
 // escreva filterPeople abaixo
@@ -237,10 +238,14 @@ const palio = ['Palio', 'Fiat', 2019];
 const shelbyCobra = ['Shelby Cobra', 'Ford', 1963];
 const chiron = ['Chiron', 'Bugatti', 2016];
 
-const toObject = ([name, brand, year]) => ({ name, brand, year });
-console.log(palio);
+const toObject = ([name, brand, year]) => ({name, brand, year});
+console.log(toObject(palio));
 
-const myLists= [1, 2, 3];
+const myLists = [1, 2, 3];
+const result = myLists.reduce((acc, item) => {
+    return acc + item;
+});
+console.log(result);
 
 // escreva swap abaixo
 const swaps = ([a, b, c]) => [c, b, a];
