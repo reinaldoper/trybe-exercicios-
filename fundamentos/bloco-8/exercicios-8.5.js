@@ -238,8 +238,14 @@ const palio = ['Palio', 'Fiat', 2019];
 const shelbyCobra = ['Shelby Cobra', 'Ford', 1963];
 const chiron = ['Chiron', 'Bugatti', 2016];
 
-const toObject = ([name, brand, year]) => ({name, brand, year});
-console.log(toObject(palio));
+const toObject = (...array) => {
+    const result = array.reduce((acc, [modelo, marca, ano]) => {
+        acc.push({modelo, marca, ano});
+        return acc;
+    }, [])
+    return result;
+};
+console.log(toObject(palio, shelbyCobra, chiron));
 
 const myLists = [1, 2, 3];
 const result = myLists.reduce((acc, item) => {
