@@ -33,7 +33,8 @@ window.onload = () => fetchCoins(); */
 const fetchCoins = async () => {
     const url = 'https://api.coincap.io/v2/assets';
 
-    const coins = await fetch(url).then((response) => response.json())
+  const coins = await fetch(url)
+        .then((response) => response.json())
         .then((data) => data.data)
         .catch((error) => error.toString());
 
@@ -47,12 +48,12 @@ const setCoins = async () => {
     coins
         .filter((_, index) => index < 10)
         .forEach(coin => {
-            const newLi = document.createElement('li');
+            const newDiv = document.createElement('p');
             const usdPrice = Number(coin.priceUsd);
 
-            newLi.innerText = `${coin.name} (${coin.symbol}): ${usdPrice.toFixed(2)}`;
+            newDiv.innerText = `${coin.name} (${coin.symbol}): ${usdPrice.toFixed(2)}`;
 
-            coinsList.appendChild(newLi);
+            coinsList.appendChild(newDiv);
         });
 }
 
