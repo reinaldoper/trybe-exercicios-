@@ -24,15 +24,10 @@
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.footer{
+  background-color: aqua;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.div{
+  background-color: darkslategrey;
+  color: aliceblue;
 }
