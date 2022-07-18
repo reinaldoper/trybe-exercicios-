@@ -31,7 +31,7 @@ fetchJoke();
 
 // Chuck Norris can write multi-threaded applications with a single thread.
 //sando o try/catch
-/* const fetch = require('node-fetch'); */
+const fetch = require('node-fetch');
 
 const fetchJokes = async () => {
   const url = 'https://api.chucknorris.io/jokes/random?category=dev';
@@ -39,12 +39,12 @@ const fetchJokes = async () => {
   try {
     const response = await fetch(url);
     const data = await response.json();
-    console.log(data.value);
+    return data.value;
   } catch(error) {
     console.log(`Algo deu errado :( \n${error}`);
   }
 }
 
-fetchJokes();
+console.log(fetchJokes());
 
 // Chuck Norris can write multi-threaded applications with a single thread.
