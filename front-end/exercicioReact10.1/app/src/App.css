@@ -1,5 +1,5 @@
 .App {
-  text-align: center;
+  background-color: #282c34;
 }
 
 .App-logo {
@@ -26,6 +26,7 @@
 
 .footer{
   background-color: aqua;
+  text-align: center;
 }
 .div{
   background-color: darkslategrey;
