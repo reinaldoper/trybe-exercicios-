@@ -1,5 +1,5 @@
 .App {
-  background-color: #282c34;
+  text-align: center;
 }
 
 .App-logo {
@@ -24,11 +24,15 @@
   color: white;
 }
 
-.footer{
-  background-color: aqua;
-  text-align: center;
+.App-link {
+  color: #61dafb;
 }
-.div{
-  background-color: darkslategrey;
-  color: aliceblue;
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }

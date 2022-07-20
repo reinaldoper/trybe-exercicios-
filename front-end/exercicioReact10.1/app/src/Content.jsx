@@ -25,7 +25,9 @@ class Content extends React.Component{
             },
         ];
         const result = conteudos.map(({conteudo, bloco, status}) => {
-            return <li key={1}>O conteúdo é: {conteudo}, Status: {status}, Bloco: {bloco}</li>
+          return <li key={conteudo}>O conteúdo é: {conteudo} - 
+            Status: {status} - 
+            Bloco: {bloco}</li>
         })
         return (
             <div>
