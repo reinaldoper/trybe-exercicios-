@@ -13,7 +13,7 @@
   background-color: dimgray;
   display: flex;
   flex-flow: row wrap;
-  
+  justify-content: space-around;
 }
 .pokedex{
   margin-bottom: 30px;
