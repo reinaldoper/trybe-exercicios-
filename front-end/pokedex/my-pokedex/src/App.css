@@ -1,0 +1,38 @@
+.App {
+  display: flex;
+  flex-flow: row wrap;
+  background-color: darkgray;
+}
+
+.pokemon{
+  border: 1px solid black;
+  margin-left: 20px;
+  width: 700px;
+  border-radius: 8px;
+  margin-bottom: 30px;
+  background-color: dimgray;
+  display: flex;
+  flex-flow: row wrap;
+  
+}
+.pokedex{
+  margin-bottom: 30px;
+  padding: 40px 40px 40px 40px;
+  display: flex;
+  flex-flow: row wrap;
+}
+.geral{
+  text-align: center;
+}
+img{
+  width: 150px;
+  margin-left: 200px;
+  height: 200px;
+}
+.poke{
+  margin-left: 80px;
+  margin-top: 40px;
+}
+.pokemon:nth-last-child(1) {
+  width: 100%
+}
