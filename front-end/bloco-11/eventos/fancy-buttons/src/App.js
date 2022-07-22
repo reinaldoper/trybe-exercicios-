@@ -8,9 +8,6 @@ class App extends Component {
       numeroDeCliques: 0
     }
     // A função abaixo vincula "manualmente" o `this` à nossa função
-    this.handleClick = this.handleClick.bind(this)
-    this.handleClicks = this.handleClicks.bind(this)
-    this.handleCli= this.handleCli.bind(this)
   }
   handleClick = () => {
     this.setState((estadoAnterior, _props) => ({
