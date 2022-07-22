@@ -29,7 +29,7 @@ class App extends Component {
       <div className="App">
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
-          <button onClick={this.handleClick} style={{backgroundColor:this.par(this.state.handleCli)}}>{this.state.numeroDeCliques}</button>
+          <button onClick={this.handleClick} style={{backgroundColor:this.par(this.state.numeroDeCliques)}}>{this.state.numeroDeCliques}</button>
           <button onClick={this.handleClicks}>Meu botão2</button>
           <button onClick={this.handleCli}>Meu botão3</button>
         </header>
