@@ -2,3 +2,6 @@ form {
   background-color: darkgrey;
   color: crimson;
 }
+.text {
+  text-transform:uppercase;
+}

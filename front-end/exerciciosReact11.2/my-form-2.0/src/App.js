@@ -22,7 +22,7 @@ class App extends React.Component {
         <fieldset>
         <legend>Formulário</legend>
           <input type='text' required maxLength={40} name='nome' value={this.state.nome}
-                        onChange={this.honChange}></input>
+                        onChange={this.honChange} className='text'></input>
           <input type='password' maxLength={50} required name='password' value={this.state.password}
                         onChange={this.honChange}></input>
           <input type='text' required maxLength={11} name='cpf' value={this.state.cpf}
