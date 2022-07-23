@@ -1,7 +1,43 @@
 form {
   background-color: darkgrey;
-  color: crimson;
+  color: rgb(32, 74, 74);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 .text {
   text-transform:uppercase;
+}
+.form1 {
+  display: flex;
+  flex-direction: column;
+  border-radius: 6px;
+  background-color: bisque;
+  max-width: 300px;
+  margin-left: 40%;
+  margin-top: 30px;
+  margin-bottom: 20px;
+}
+.form2 {
+  display: flex;
+  flex-direction: column;
+  border-radius: 6px;
+  background-color: bisque;
+  max-width: 300px;
+  margin-left: 40%;
+  margin-bottom: 10px;
+}
+.botao {
+  width: 100px;
+  margin-left: 40%;
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+.cidade {
+  margin-bottom: 10px;
+}
+legend {
+  color: rgb(3, 4, 3);
+  font-size: 20px;
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
 }
