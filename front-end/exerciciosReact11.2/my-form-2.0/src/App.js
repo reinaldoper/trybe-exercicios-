@@ -1,18 +1,33 @@
 import React from 'react';
 import './App.css';
+import Forms from './Forms';
+import Senha from './Senha';
+import Cpf from './Cpf';
+import Endereco from './Endereco';
+import Cidade from './Cidade';
+import Estado from './Estado';
+import Radio from './Radio';
+import Display from './Display';
+
+const valores = {
+  nome: '',
+  password: '',
+  cpf: '',
+  box: '',
+  house: '',
+  endereco: '',
+  cidade: '',
+  curriculo: '',
+  cargo: '',
+  descricao: '',
+  alert: true,
+  submitted: false,
+}
 
 class App extends React.Component {
-  state = {
-    nome: '',
-    password: '',
-    cpf: '',
-    box: '',
-    house: '',
-    endereco: '',
-    cidade: '',
-    curriculo: '',
-    cargo: '',
-    alert: true,
+  constructor(props) {
+    super(props);
+    this.state = valores;
   }
 
   honChange = (event) => {
@@ -27,6 +42,8 @@ class App extends React.Component {
       this.setState({
         cidade: '',
       });
+      alert('Campo inválido.')
+      target.value = '';
     }
   }
   honMouse = () => {
@@ -37,44 +54,38 @@ class App extends React.Component {
       alert: false,
     })
   }
-  clickButon = ({target}) => {
-    console.log(target.value);
+  renderizaDisplay = () => {
+    this.setState({ submitted: true })
+  }
+  limpaDisplay = () => {
+    Array.from(document.querySelectorAll("input")).forEach(
+      input => (input.value = "")
+    );
+    Array.from(document.querySelectorAll("select")).forEach(
+      input => (input.value = "")
+    );
+    this.setState(valores);
   }
   render() {
+    const { submitted } = this.state;
     return (
+      <main>
       <form>
         <fieldset className='form1'>
           <legend>Dados pessoais</legend>
           <label>Nome: </label>
-          <input type='text' required="required" maxLength={40} name='nome' value={this.state.nome}
-            onChange={this.honChange} className='text' /> 
+            <Forms honChange={this.honChange} /> 
           <label>Senha: </label>
-          <input type='password' maxLength={50} required="required" name='password' value={this.state.password}
-            onChange={this.honChange} /> 
+          <Senha honChange={this.honChange} />
           <label>Cpf: </label>
-          <input type='text' required="required" maxLength={11} name='cpf' value={this.state.cpf}
-            onChange={this.honChange} /> 
+          <Cpf honChange={this.honChange} />
           <label>Endereço: </label>
-          <input type='text' required="required" maxLength={200} name='endereco' value={this.state.endereco} onChange={this.honChange} /> 
+          <Endereco honChange={this.honChange} />
           <label>Cidade: </label>
-          <input type='text' required="required" maxLength={28} name='cidade' value={this.state.cidade} onChange={ this.honChange} onBlur={this.handleBlur} className='cidade' /> 
-          <select name='box' required="required" value={this.state.box}
-                        onChange={this.honChange}>
-           <option>Select Estates</option>
-               <option>MS</option>
-               <option>PR</option>
-               <option>MT</option>
-               <option>RJ</option>
-               <option>SP</option>
-               <option>AC</option>
-               <option>AM</option>
-               <option>RN</option>
-               <option>ES</option>
-          </select>
-          <div onChange={this.honChange}>
-               <input type="radio" name="house" value='casa' />Casa<br />
-               <input type="radio" name="house" value='apartamento' />Apartamento<br />
-          </div>
+          <Cidade honChange={this.honChange} handleBlur={this.handleBlur} />
+          <label>Estado nasc: </label>
+          <Estado honChange={this.honChange} />
+          <Radio honChange={this.honChange} />
         </fieldset>
         <fieldset className='form2'>
           <legend>Último emprego</legend>
@@ -88,8 +99,11 @@ class App extends React.Component {
           <input type='text' required="required" maxLength={500} name='descricao' value={this.state.descricao}
             onChange={this.honChange} className='descricao' />
         </fieldset>
-        <button type='submit' onClick={this.clickButon} className='botao'>Submeter</button>
+          <button type='button' className='botao' onClick={this.renderizaDisplay}>Submeter</button>
+          <button type='button' className='botao' onClick={this.limpaDisplay}>Limpar</button>
       </form>
+        {submitted && <Display currentState={this.state} />}
+    </main>
     );
   }
   
