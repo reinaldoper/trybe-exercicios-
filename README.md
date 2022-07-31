@@ -81,24 +81,24 @@ O programa conta com mais de 1.500 horas de aulas presenciais e online, aborda i
 
 ##### Bloco 10: Jest
 
-- [ ] 10-1: _Primeiros passos no Jest_
-- [ ] 10-2: _Jest - Testes Assíncronos_
-- [ ] 10-3: _Jest - Simulando comportamentos_
-- [ ] 10-4: _[Projeto - Jest Assíncrono e Mocking]()_
+- [✅️] 10-1: _introdução-React_
+- [✅️] 10-2: _'Hello, world!' no React!_
+- [✅️] 10-3: _Componentes React_
+- [✅️] 10-4: _[Projeto - Sistema Solar]()_
 
 ## Desenvolvimento Front-end :hourglass_flowing_sand:
 
 ##### Bloco 11: Introdução - React
 
-- [ ] 11-1: _'Hello, world!' no React!_
-- [ ] 11-2: _Componentes React_
-- [ ] 11-3: _[Projeto - Movie Cards Library]()_
+- [✅️] 11-1: componentes com estados e Eventos
+- [✅️] 11-2: formulários no React
+- [✅️] 11-3: _[Projeto - Tryunfo]()_
 
 ##### Bloco 12: React
 
-- [ ] 12-1: _Components com estado_
-- [ ] 12-2: _Eventos e formulários no React_
-- [ ] 12-3: _[Projeto - Movie Cards Library Stateful]()_
+- [✅️] 12-1: ciclo de vida de componentes
+- [✅️] 12-2: React Router
+- [ ] 12-3: _[Projeto - Trybe Tunes]()_
 
 ##### Bloco 13: React
 
