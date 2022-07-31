@@ -1,15 +1,17 @@
 import React from "react";
-import unidade from "./data";
+import { Link } from "react-router-dom";
 import Pokemon from "./Pokemon";
 
 class Pokedex extends React.Component {
     render() {
-        const result = unidade.map((poke) => {
+        const { pokemons } = this.props;
+        const result = pokemons.map((poke) => {
             return <Pokemon key={poke.id} game={poke} />
         })
         return (
             <div className="geral">
                 <h1>Pokedex</h1>
+                <Link to="/favoritos">Favoritos</Link>
                 <div className="pokedex">
                     {result}
                 </div>

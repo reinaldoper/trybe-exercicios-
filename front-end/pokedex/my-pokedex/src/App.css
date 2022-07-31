@@ -26,11 +26,11 @@
 }
 img{
   width: 150px;
-  margin-left: 200px;
+  margin-left: 150px;
   height: 200px;
 }
 .poke{
-  margin-left: 80px;
+  margin-left: 60px;
   margin-top: 40px;
 }
 .pokemon:nth-last-child(1) {
