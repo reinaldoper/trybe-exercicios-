@@ -28,6 +28,7 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = valores;
+    localStorage.setItem('forms', JSON.stringify(this.state))
   }
 
   honChange = (event) => {
