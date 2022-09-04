@@ -105,7 +105,7 @@ O programa conta com mais de 1.500 horas de aulas presenciais e online, aborda i
 - [✅️] 13-1: _Melhorando o reuso de componentes: props.children e PropTypes_
 - [✅️] 13-2: _Ciclo de vida de componentes em React_
 - [✅️ 13-3: _React Router_
-- [✅️] 13-3: _[Projeto - Frontend Online Store]()_
+- [✅️] 13-3: _[Projeto - Frontend Online Store](https://frontend-on-line.web.app)_
 
 ##### Bloco 14: Testes com React
 - [✅️] 14-1: _Testando React com a React Testing Library_
