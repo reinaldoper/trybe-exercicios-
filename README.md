@@ -84,7 +84,7 @@ O programa conta com mais de 1.500 horas de aulas presenciais e online, aborda i
 - [✅️] 10-1: _introdução-React_
 - [✅️] 10-2: _'Hello, world!' no React!_
 - [✅️] 10-3: _Componentes React_
-- [✅️] 10-4: _[Projeto - Sistema Solar]()_
+- [✅️] 10-4: _[Projeto - Sistema Solar](https://helpful-duckanoo-fa7037.netlify.app/)_
 
 ## Desenvolvimento Front-end :hourglass_flowing_sand:
 
