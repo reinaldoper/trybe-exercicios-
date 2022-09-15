@@ -131,7 +131,7 @@ O programa conta com mais de 1.500 horas de aulas presenciais e online, aborda i
 
 ##### Bloco 17: Projeto React
 
-- [ ] 17-1: _[Projeto - Jogo de Trivia](https://benevolent-liger-a7fc49.netlify.app)_
+- [✅️] 17-1: _[Projeto - Jogo de Trivia](https://benevolent-liger-a7fc49.netlify.app)_
 
 ##### Bloco 18: React & Context API
 
