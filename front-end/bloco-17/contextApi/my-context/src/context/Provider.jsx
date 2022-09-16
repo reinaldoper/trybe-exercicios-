@@ -22,7 +22,7 @@ class Provider extends Component {
   render() {
     const context = {
       ...this.state,
-      nextColor: this.nextColor,
+      nextColor: this.nextColor(),
     };
     const { children } = this.props;
     return (
