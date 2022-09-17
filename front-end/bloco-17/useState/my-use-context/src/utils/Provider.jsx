@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 import AppContext from './AppContext';
 
 function Provider({ children }) {
-  const [stateA, setStateA] = useState('initialStateA');
-  const [stateB, setStateB] = useState('initialStateB');
+  const [stateA, setStateA] = useState(0);
+  const [stateB, setStateB] = useState(0);
   const contextValue = {
     stateA,
     setStateA,
