@@ -1,7 +1,8 @@
 import React, { useContext, useState } from 'react';
+import '../App.css';
 import FormContext from '../context/FormContext';
 
-const Form = () => {
+const Form = ({ history }) => {
   const { formData, atualizaForm } = useContext(FormContext);
   const [myForm, setMyForm] = useState({
     name: '',
@@ -31,14 +32,22 @@ const Form = () => {
       Bloco: myForm.Bloco,
     }
     atualizaForm(newForm);
+    setMyForm(() => ({
+      name: '',
+      idade: '',
+    }))
+  }
+
+  const submitList = () => {
+    history.push('/newPage');
   }
 
   return (
-    <section>
+    <section className="App-header">
       <form>
-      <input type="text" name="name" value={formData.name} onChange={ handChange } />
+      <input type="text" name="name" value={myForm.name} onChange={ handChange } />
       <br></br>
-      <input type="number" name="idade" value={formData.idade} onChange={ handChange } />
+      <input type="number" name="idade" value={myForm.idade} onChange={ handChange } />
       <br></br>
         Bloco
       <label htmlForm="label">
@@ -72,17 +81,9 @@ const Form = () => {
         />
       </label>
       <br></br>
-      <button type='button' onClick={ submitForm }>Salvar</button>
+        <button type='button' onClick={submitForm}>Salvar</button>
+        <button type='button' onClick={ submitList }>Lista</button>
       </form>
-        <ol>
-        {formData.map((item) => (
-        <div key={item.id}>
-            <li>{item.name}</li>
-            <li>{item.idade}</li>
-            <li>{item.Bloco}</li>
-        </div>
-        ))}
-        </ol>
     </section>
   )
 }

@@ -1,21 +1,29 @@
 import React from 'react';
-/* import { Route, Switch } from 'react-router-dom'; */
+import {
+  BrowserRouter, Route, Switch
+} from "react-router-dom";
 import './App.css';
 import { FormProvide } from './context/FormProvide';
 import Form from './pages/Form';
+import NewPageRenderiza from './pages/NewPageRenderiza';
 
 function App() {
   return (
+    
     <FormProvide>
       <div className="App">
         <header className="App-header">
-          <Form />
+          {/* <Form /> */}
         </header>
-        {/* <Switch>
-          <Route path="/" component={Form} />
-        </Switch> */}
+        <BrowserRouter>
+          <Switch>
+            <Route exact path="/" component={Form} />
+            <Route exact path="/newPage" component={NewPageRenderiza} />
+          </Switch>
+          </BrowserRouter>
       </div>
     </FormProvide>
+    
   );
 }
 
