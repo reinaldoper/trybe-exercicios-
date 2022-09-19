@@ -75,7 +75,7 @@ const Form = ({ history }) => {
         Ciência da Computação
         <input
           type="radio"
-          id="Ciencia-da-Computacao"
+          id="Ciencia da Computacao"
           name="label"
           onChange={ handChange }
         />
