@@ -132,7 +132,7 @@ O programa conta com mais de 1.500 horas de aulas presenciais e online, aborda i
 
 ##### Bloco 19: Projeto Final de Front-end
 
-- [✅️] 19-1: _[Projeto - App de Receitas]()_
+- [✅️] 19-1: _[Projeto - App de Receitas](https://effortless-jelly-2a6292.netlify.app/drinks/15997)_
 
 ## Desenvolvimento Back-end :hourglass_flowing_sand:
 - [✅️] 20.0: _[Lista de tarefas com Docker]()_
