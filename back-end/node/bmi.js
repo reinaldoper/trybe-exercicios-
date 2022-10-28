@@ -25,10 +25,10 @@ const main = async () => {
     case (result >= 18.5 && result < 25):
       console.log('Peso normal');
       break;
-    case (result > 25.0 && result < 2.9):
+    case (result > 25.0 && result < 29.99):
       console.log('Sobrepeso');
       break;
-    case (result > 30 && result < 34.9):
+    case (result > 30 && result < 34.99):
       console.log('Obesidade grau 1');
       break;
     case (result > 35 && result < 39.99):
