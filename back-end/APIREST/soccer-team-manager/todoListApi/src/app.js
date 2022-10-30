@@ -1,7 +1,7 @@
 const express = require('express');
 const fs = require('fs').promises;
 const path = require('path');
-const { getMovies, createMovie } = require('../utils/handle.Json');
+const { getMovies, createMovie, delteMovie } = require('../utils/handle.Json');
 
 const filePath = path.resolve(__dirname, '..', 'movies.json');
 
@@ -49,12 +49,9 @@ app.put('/movies/:id', async (req, res) => {
   app.delete('/movies/:id', async (req, res) => {
     try {
       const { id } = req.params;
-    const result = await getMovies();
-    const newMovie = result.filter((movie) => movie.id !== Number(id));
-    const updatedMovies = JSON.stringify(newMovie, null, 2);
-    await fs.writeFile(filePath, updatedMovies);
-    res.status(OK).json({ message: `Deletado o id:${id}` });
-    res.status(204).end();
+      await delteMovie(id);
+      res.status(OK).json({ message: `Deletado o id:${id}` });
+      res.status(204).end();
     } catch (error) {
       res.status(500).send({ message: error.message });
     }

@@ -17,4 +17,10 @@ const createMovie = async (movie) => {
   const allMovies = JSON.stringify([...content, newMovie]);
   await fs.writeFile(filePath, allMovies);
 };
-module.exports = { getMovies, createMovie };
+const delteMovie = async (id) => {
+  const result = await getMovies();
+  const newMovie = result.filter((movie) => movie.id !== Number(id));
+  const updatedMovies = JSON.stringify(newMovie, null, 2);
+  await fs.writeFile(filePath, updatedMovies);
+};
+module.exports = { getMovies, createMovie, delteMovie };
