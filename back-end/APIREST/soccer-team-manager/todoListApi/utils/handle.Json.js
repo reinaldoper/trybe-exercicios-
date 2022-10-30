@@ -8,11 +8,13 @@ const getMovies = async () => {
   return content;
 };
 
-const createMovie = async (movie) => {
+const createMovie = async (mov) => {
+  const { movie, price } = mov;
   const content = JSON.parse(await readFile(filePath));
   const newMovie = {
   id: content[content.length - 1].id + 1,
-  movie,
+  movie, 
+  price,
   };
   const allMovies = JSON.stringify([...content, newMovie]);
   await fs.writeFile(filePath, allMovies);

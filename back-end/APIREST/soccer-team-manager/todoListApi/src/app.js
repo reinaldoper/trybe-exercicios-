@@ -50,7 +50,7 @@ app.put('/movies/:id', async (req, res) => {
 app.post('/movies', async (req, res) => {
      try {
        const { movie, price } = req.body;
-       await createMovie(movie, price);
+       await createMovie(req.body);
       res.status(CREATED).json({ message: `Criado ${movie}, ${price}` });
      } catch (err) {
        res.status(500).send({ message: err.message });
