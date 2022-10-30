@@ -1,9 +1,5 @@
 const express = require('express');
-const fs = require('fs').promises;
-const path = require('path');
-const { getMovies, createMovie, delteMovie } = require('../utils/handle.Json');
-
-const filePath = path.resolve(__dirname, '..', 'movies.json');
+const { getMovies, createMovie, delteMovie, putMovie } = require('../utils/handle.Json');
 
 const app = express();
 app.use(express.json());
@@ -35,13 +31,8 @@ const CREATED = 201;
 app.put('/movies/:id', async (req, res) => {
     try {
       const { id } = req.params;
-      const { movie, price } = req.body;
-      const movies = await getMovies();
-      const index = movies.findIndex((element) => element.id === Number(id));
-      movies[index] = { id: Number(id), movie, price };
-      const updatedMovies = JSON.stringify(movies, null, 2);
-      await fs.writeFile(filePath, updatedMovies);
-       res.status(200).json(movies[index]);
+      await putMovie(id, req.body);
+      res.status(200).json({ message: `Alterado o id:${id}` });
     } catch (err) {
       res.status(500).send({ message: err.message });
     }
