@@ -49,11 +49,11 @@ const mockFile = JSON.stringify({
 });
 
 describe('Testando a API Cacau Trybe', function () {
- /*  sinon.stub(fs.promises, 'readFile')
+  sinon.stub(fs.promises, 'readFile')
         .resolves(mockFile);
         afterEach(function () {
           sinon.restore();
-        }); */
+        });
   describe('Usando o método GET em /chocolates/:id para buscar o ID 4', function () {
   it('Retorna o chocolate Mounds', async function () {
     const response = await chai
@@ -166,12 +166,13 @@ describe('Usando o método GET em /chocolates/brand/:brandId para buscar brandId
       ]);
     });
   });
+  describe('Usando o método GET em /chocolates/total', function () {
+    it('Retorna a quantidade total de chocolates', async function () {
+      const response = await chai.request(app)
+        .get('/chocolates/total');
+
+      expect(response.status).to.be.equal(200);
+      expect(response.body).to.deep.equal({ totalChocolates: 4 });
+  });
 });
-// tests/integration/chocolates.test.js
-
-//describe('Testando a API Cacau Trybe', function () {
-
-//...
-
-
-//});
+});
