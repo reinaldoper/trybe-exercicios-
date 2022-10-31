@@ -2,8 +2,6 @@
 
 const fs = require('fs').promises;
 const { join } = require('path');
-const fs = require('fs').promises;
-const { join } = require('path');
 const path = '/files/cacauTrybeFile.json';
 
 const readCacauTrybeFile = async () => {
@@ -40,7 +38,7 @@ const writeCacauTrybe = async (content) => {
     return null;
   }
 }
-
+//solução retirada do course para estudo posterior
 const updateChocolate = async (id, update) => {
   const cacauTrybe = await readCacauTrybeFile();
   const chocolateToUpdate = cacauTrybe.chocolates.find(
@@ -53,7 +51,7 @@ const updateChocolate = async (id, update) => {
         return chocolate;
       });
   
-    await writeCacauTrybeFile(cacauTrybe);
+    await writeCacauTrybe(cacauTrybe);
     return { ...chocolateToUpdate, ...update };
   }
 

@@ -175,6 +175,7 @@ describe('Usando o método GET em /chocolates/brand/:brandId para buscar brandId
       expect(response.body).to.deep.equal({ totalChocolates: 4 });
   });
 });
+//solução retirada do course para estudo posterior
   describe('Usando o método PUT em /chocolates/:id', function () {
     it('Atualiza um chocolate existente', async function () {
       const response = await chai
