@@ -87,14 +87,13 @@ app.put('/activities/:id', (req, res) => {
   const idParams = req.params.id;
   const { name, initials } = req.body;
   let arrayActivies;
-  for (let i = 0; i < activities.length; i++) {
-    const activi = activities[i];
+  activities.map((activi) => {
     if (activi.id === Number(idParams)) {
       activi.name = name;
       activi.initials = initials;
       arrayActivies = activi;
-    }
-  }
+    } return arrayActivies;
+  });
   res.status(200).json(arrayActivies);
 });
 module.exports = app;
