@@ -18,7 +18,7 @@ router.get('/', (req, res) => res.json(teams));
 // configurações globais afetam apenas este router (3)
 router.use(apiCredentials);
 
-router.get('/:id', (req, res) => {
+router.get('/:id', validaId, (req, res) => {
   const id = Number(req.params.id);
   const team = teams.find(t => t.id === id);
   if (team) {
@@ -35,7 +35,7 @@ router.post('/', validaData, (req, res) => {
   res.status(201).json(team);
 });
 
-router.put('/:id', validaId, (req, res) => {
+router.put('/:id', validaData, validaId, (req, res) => {
   const id = Number(req.params.id);
   const team = teams.find(t => t.id === id);
   if (team) {
@@ -48,7 +48,7 @@ router.put('/:id', validaId, (req, res) => {
   }
 });
 
-router.delete('/:id', (req, res) => {
+router.delete('/:id', validaId, (req, res) => {
   const id = Number(req.params.id);
   const team = teams.find(t => t.id === id);
   if (team) {
