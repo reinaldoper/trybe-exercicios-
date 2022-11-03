@@ -1,4 +1,5 @@
 const express = require('express');
+
 // os requires são relativos ao arquivo, então o path muda ligeiramente
 const { validaId, validaData } = require('../middlewares');
 const apiCredentials = require('../middlewares/apiCredentials');
@@ -11,7 +12,6 @@ const teams = [
   { id: 1, nome: 'São Paulo Futebol Clube', sigla: 'SPF' },
   { id: 2, nome: 'Sociedade Esportiva Palmeiras', sigla: 'PAL' },
 ];
-
 // o path é relativo à rota em que o router foi montado (2)
 router.get('/', (req, res) => res.json(teams));
 
@@ -20,7 +20,7 @@ router.use(apiCredentials);
 
 router.get('/:id', validaId, (req, res) => {
   const id = Number(req.params.id);
-  const team = teams.find(t => t.id === id);
+  const team = teams.find((t) => t.id === id);
   if (team) {
     res.json(team);
   } else {
@@ -37,7 +37,7 @@ router.post('/', validaData, (req, res) => {
 
 router.put('/:id', validaData, validaId, (req, res) => {
   const id = Number(req.params.id);
-  const team = teams.find(t => t.id === id);
+  const team = teams.find((t) => t.id === id);
   if (team) {
     const index = teams.indexOf(team);
     const updated = { id, ...req.body };
@@ -50,11 +50,10 @@ router.put('/:id', validaData, validaId, (req, res) => {
 
 router.delete('/:id', validaId, (req, res) => {
   const id = Number(req.params.id);
-  const team = teams.find(t => t.id === id);
-  if (team) {
-    const index = teams.indexOf(team);
-    teams.splice(index, 1);
-  }
+  const arrayPosition = teams.filter((team) => team.id !== id);
+  teams.splice(arrayPosition, 1);
+
+  /* res.status(200).end(); */
   res.sendStatus(200);
 });
 
