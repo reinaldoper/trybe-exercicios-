@@ -50,7 +50,7 @@ router.put('/:id', validaData, validaId, (req, res) => {
 
 router.delete('/:id', validaId, (req, res) => {
   const id = Number(req.params.id);
-  const arrayPosition = teams.filter((team) => team.id !== id);
+  const arrayPosition = teams.findIndex((team) => team.id !== id);
   teams.splice(arrayPosition, 1);
 
   /* res.status(200).end(); */
