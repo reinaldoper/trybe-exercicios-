@@ -1,17 +1,18 @@
 const express = require('express');
+const teams = require('../teams.json');
 
 // os requires são relativos ao arquivo, então o path muda ligeiramente
-const { validaId, validaData } = require('../middlewares');
+const { validaId, validaData, validaEmail, validaNome } = require('../middlewares');
 const apiCredentials = require('../middlewares/apiCredentials');
 
 // cria um router middleware
 const router = express.Router();
 
 let nextId = 3;
-const teams = [
+/* const teams = [
   { id: 1, nome: 'São Paulo Futebol Clube', sigla: 'SPF' },
   { id: 2, nome: 'Sociedade Esportiva Palmeiras', sigla: 'PAL' },
-];
+]; */
 // o path é relativo à rota em que o router foi montado (2)
 router.get('/', (req, res) => res.json(teams));
 
@@ -28,7 +29,7 @@ router.get('/:id', validaId, (req, res) => {
   }
 });
 
-router.post('/', validaData, (req, res) => {
+router.post('/', validaData, validaEmail, validaNome, (req, res) => {
   const team = { id: nextId, ...req.body };
   teams.push(team);
   nextId += 1;
