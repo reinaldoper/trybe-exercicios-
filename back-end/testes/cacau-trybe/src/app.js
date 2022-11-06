@@ -3,8 +3,12 @@
 const express = require('express');
 const cacauTrybe = require('./cacauTrybe');
 
+
 const app = express();
 app.use(express.json());
+app.listen(3003, () => {
+  console.log('Online cacau');
+});
 
 app.get('/chocolates', async (req, res) => {
   const chocolates = await cacauTrybe.getAllChocolates();
@@ -36,4 +40,25 @@ app.put('/chocolates/:id', async (req, res) => {
   if (updatedChocolate) return res.status(200).json({ chocolate: updatedChocolate });
   res.status(404).json({ message: 'chocolate not found' });
 });
+app.post('/chocolates', async (req, res) => {
+  try {
+    const data = req.body;
+    await cacauTrybe.postCacauTrybe(data);
+    res.status(200).json({ message: 'Dados instalados com sucesso!'});
+  } catch (error) {
+    res.status(404).json(error.message);
+  }
+});
+app.delete('/chocolates/:id', async (req, res) => {
+  try {
+    const { id } = req.params;
+    const data = await cacauTrybe.getAllChocolates();
+    console.log(Number(id));
+    const result = data.filter((data) => data.id !== Number(id));
+    await cacauTrybe.writeCacauTrybe(result);
+    res.status(200).json({ message: 'Exclusão com sucesso'});
+  } catch (error) {
+    res.status(404).json(error.message);
+  }
+})
 module.exports = app;

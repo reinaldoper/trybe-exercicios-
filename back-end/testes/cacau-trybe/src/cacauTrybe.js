@@ -16,17 +16,17 @@ const readCacauTrybeFile = async () => {
 
 const getAllChocolates = async () => {
   const cacauTrybe = await readCacauTrybeFile();
-  return cacauTrybe.chocolates;
+  return cacauTrybe;
 };
 const getChocolateById = async (id) => {
   const cacauTrybe = await readCacauTrybeFile();
-  return cacauTrybe.chocolates
+  return cacauTrybe
     .find((chocolate) => chocolate.id === id);
 };
 
 const getChocolatesByBrand = async (brandId) => {
   const cacauTrybe = await readCacauTrybeFile();
-  return cacauTrybe.chocolates
+  return cacauTrybe
     .filter((chocolate) => chocolate.brandId === brandId);
 };
 const writeCacauTrybe = async (content) => {
@@ -41,12 +41,12 @@ const writeCacauTrybe = async (content) => {
 //solução retirada do course para estudo posterior
 const updateChocolate = async (id, update) => {
   const cacauTrybe = await readCacauTrybeFile();
-  const chocolateToUpdate = cacauTrybe.chocolates.find(
+  const chocolateToUpdate = cacauTrybe.find(
     (chocolate) => chocolate.id === id,
   );
 
   if (chocolateToUpdate) {
-    cacauTrybe.chocolates = cacauTrybe.chocolates.map((chocolate) => {
+    cacauTrybe.chocolates = cacauTrybe.map((chocolate) => {
         if (chocolate.id === id) return { ...chocolate, ...update };
         return chocolate;
       });
@@ -57,10 +57,20 @@ const updateChocolate = async (id, update) => {
 
   return false;
 };
+const postCacauTrybe = async (update) => {
+  const cacauTrybe = await readCacauTrybeFile();
+  const { name, brandId } = update;
+  const datas = cacauTrybe.length;
+  console.log(cacauTrybe);
+  const data = [...cacauTrybe, { name, brandId, id: datas + 1} ];
+  await writeCacauTrybe(data);
+};
 
 module.exports = {
     getAllChocolates,
     getChocolateById,
   getChocolatesByBrand,
   updateChocolate,
+  postCacauTrybe, 
+  writeCacauTrybe,
 };
