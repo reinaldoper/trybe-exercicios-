@@ -147,16 +147,24 @@ O programa conta com mais de 1.500 horas de aulas presenciais e online, aborda i
 ##### Bloco 21: Bancos de dados relacionais
 
 - [✅️] 21-1: _Funções mais usadas no SQL_
-- [ ] 21-2: _Descomplicando JOINs e UNIONs_
-- [ ] 21-3: _Stored Routines & Subqueries_
-- [ ] 21-4: _[Projeto - Vocabulary Booster]()_
+- [✅️] 21-2: _Descomplicando JOINs e UNIONs_
+- [✅️] 21-3: _Stored Routines & Subqueries_
+- [✅️] 21-4: _[Projeto - Vocabulary Booster]()_
 
 ##### Bloco 22: Bancos de dados relacionais
 
-- [ ] 22-1: _Transformando ideias em um modelo de banco de dados_
-- [ ] 22-2: _Normalização, Formas Normais e Dumps_
-- [ ] 22-2: _Transformando ideias em um modelo de banco de dados - Parte 2_
-- [ ] 22-3: _[Projeto - One For All]()_
+- [✅️] 22-1: _Transformando ideias em um modelo de banco de dados_
+- [✅️] 22-2: _Normalização, Formas Normais e Dumps_
+- [✅️] 22-2: _Transformando ideias em um modelo de banco de dados - Parte 2_
+- [✅️] 22-3: _[Projeto - One For All]()_
+
+
+##### Bloco 23: Intro - NodeJS
+
+- [✅️] 26-1: _NodeJS - Introdução_
+- [✅️] 26-2: _NodeJS - Fluxo Assíncrono_
+- [✅️] 26-3: _NodeJS - Arquitetura_
+- [✅️] 26-4: _[Projeto - A CLI of Ice and Fire]()_
 
 ##### Bloco 23: Introdução - NoSQL
 
@@ -176,13 +184,6 @@ O programa conta com mais de 1.500 horas de aulas presenciais e online, aborda i
 - [ ] 25-1: _Aggregation Framework - Part 1_
 - [ ] 25-2: _Aggregation Framework - Part 2_
 - [ ] 25-3: _[Projeto - Aggregations]()_
-
-##### Bloco 26: Intro - NodeJS
-
-- [ ] 26-1: _NodeJS - Introdução_
-- [ ] 26-2: _NodeJS - Fluxo Assíncrono_
-- [ ] 26-3: _NodeJS - Arquitetura_
-- [ ] 26-4: _[Projeto - A CLI of Ice and Fire]()_
 
 ##### Bloco 27: NodeJS
 
