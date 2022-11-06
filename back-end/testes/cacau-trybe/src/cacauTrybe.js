@@ -46,12 +46,12 @@ const updateChocolate = async (id, update) => {
   );
 
   if (chocolateToUpdate) {
-    cacauTrybe.chocolates = cacauTrybe.map((chocolate) => {
+    cacau= cacauTrybe.map((chocolate) => {
         if (chocolate.id === id) return { ...chocolate, ...update };
         return chocolate;
       });
   
-    await writeCacauTrybe(cacauTrybe);
+    await writeCacauTrybe(cacau);
     return { ...chocolateToUpdate, ...update };
   }
 

@@ -6,10 +6,22 @@ const cacauTrybe = require('./cacauTrybe');
 
 const app = express();
 app.use(express.json());
-app.listen(3003, () => {
+app.listen(3002, () => {
   console.log('Online cacau');
 });
-
+app.get('/chocolates/search', async (req, res) => {
+  const { q } = req.query;
+  console.log(q);
+  const data = await cacauTrybe.getAllChocolates();
+  if (!q) {
+    return res.status(200).json({ message: 'Não encontrado o chocolate!' });
+  } 
+  if (q) {
+    const result = data.filter((chocolate) => chocolate.name.includes(q));
+    if (result.length > 0) return res.status(200).json(result);
+  }
+  return res.status(404).json({ message: 'Pesquisa not found!' });
+});
 app.get('/chocolates', async (req, res) => {
   const chocolates = await cacauTrybe.getAllChocolates();
   res.status(200).json({ chocolates });
