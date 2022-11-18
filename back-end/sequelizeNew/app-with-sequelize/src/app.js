@@ -8,6 +8,7 @@ const Book = require('./controllers/BooksController');
 const app = express();
 
 app.use(express.json());
+app.get('/books/search/', Book.getSearch);
 app.get('/user', User.getAll);
 app.get('/books', Book.getAll);
 app.get('/books/:id', Book.getById);

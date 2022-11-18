@@ -12,6 +12,18 @@ const getAll = async (_req, res) => {
   }
 };
 
+
+const getSearch = async (req, res) => {
+  try {
+    const { q } = req.query;
+    const books = await BookService.getAll();
+    const result = books.filter(({ title }) => title.includes(q));
+    return res.status(200).json(result);
+  } catch (e) {
+    res.status(500).json({ message: error500Message });
+  }
+};
+
 const getById = async (req, res) => {
   try {
     const { id } = req.params;
@@ -65,4 +77,4 @@ const deleteBook = async (req, res) => {
   }
 };
 
-module.exports = { getAll, getById, createBook, updateBook, deleteBook };
+module.exports = { getAll, getById, createBook, updateBook, deleteBook, getSearch };
