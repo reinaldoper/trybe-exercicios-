@@ -3,12 +3,18 @@
 const express = require('express');
 
 const User = require('./controllers/user.controller');
+const Book = require('./controllers/BooksController');
 
 const app = express();
 
 app.use(express.json());
-
 app.get('/user', User.getAll);
+app.get('/books', Book.getAll);
+app.get('/books/:id', Book.getById);
+app.post('/books', Book.createBook);
+app.put('/books/:id', Book.updateBook);
+app.delete('/books/:id', Book.deleteBook);
+
 
 app.get('/user/:id', User.getById);
 
