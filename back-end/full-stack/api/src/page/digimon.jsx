@@ -11,8 +11,8 @@ class digimon extends Component {
     return (
       <div className='digimon'><h1>Digimon Page details 
         <button type='button' onClick={ this.handClick } className='back'>
-      <h2>{ pok[0].name }</h2>
-    </button></h1>
+           <h2>{ pok[0].name }</h2>
+        </button></h1>
         <div className='digimon-detail'>
           <h2>{ pok[0].level }</h2>
           <img src={ pok[0].img } alt={ pok[0].name } className='detail-img'/>

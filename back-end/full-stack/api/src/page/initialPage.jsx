@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux';
-import { fetchBook } from '../services/fetchApi';
+import { fetchBook, fetchBookSearch } from '../services/fetchApi';
 import { requiretName, newName } from '../actions/action';
 
 class initialPage extends Component {
@@ -11,9 +11,9 @@ class initialPage extends Component {
     dispatch(requiretName(result));
   }
 
-  handClick = (name) => {
-    const { book, dispatch, history } = this.props;
-    const result = book.filter((item) => item.name.includes(name));
+  handClick = async (name) => {
+    const { dispatch, history } = this.props;
+    const result = await fetchBookSearch(name);
     dispatch(newName(result));
     history.push('/pok');
   }
