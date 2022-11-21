@@ -3,12 +3,21 @@ import { connect } from 'react-redux';
 import { fetchBook, fetchBookSearch } from '../services/fetchApi';
 import { requiretName, newName } from '../actions/action';
 
+const message = 'Carregando ...';
 class initialPage extends Component {
+  state = {
+    msg: true,
+  }
 
   async componentDidMount(){
     const result = await fetchBook();
-    const { dispatch } = this.props;
-    dispatch(requiretName(result));
+    if (!result){
+      this.setState({ msg: false })
+    } else {
+      const { dispatch } = this.props;
+      dispatch(requiretName(result));
+      this.setState({ msg: true })
+    }
   }
 
   handClick = async (name) => {
@@ -19,6 +28,7 @@ class initialPage extends Component {
   }
   render() {
     const { book } = this.props;
+    const { msg } = this.state;
     const list = book.map((item, index) => (
       <div key={ index } className= 'div-li'>
         <li>{ item.name }</li>
@@ -33,7 +43,7 @@ class initialPage extends Component {
     ));
     return (
       <div>
-       <ol className="App-header"> { list }</ol>
+       { !msg ? <h2>{ message }</h2> : <ol className="App-header"> { list }</ol> }
       </div>
     )
   }
