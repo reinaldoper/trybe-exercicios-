@@ -6,12 +6,12 @@ import { requiretName, newName } from '../actions/action';
 const message = 'Carregando ...';
 class initialPage extends Component {
   state = {
-    msg: true,
+    msg: false,
   }
 
   async componentDidMount(){
     const result = await fetchBook();
-    if (!result){
+    if (result.length < 1){
       this.setState({ msg: false })
     } else {
       const { dispatch } = this.props;
@@ -43,7 +43,7 @@ class initialPage extends Component {
     ));
     return (
       <div>
-       { !msg ? <h2>{ message }</h2> : <ol className="App-header"> { list }</ol> }
+       { !msg ? <h1>{ message }</h1> : <ol className="App-header"> { list }</ol> }
       </div>
     )
   }
