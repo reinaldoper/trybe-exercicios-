@@ -47,7 +47,7 @@ const getSearch = async (req, res) => {
     const { q } = req.query;
     const result = await userBookService.getAllSearch();
     const r = result.filter(({ name }) => name.includes(q));
-    if (!r)
+    if (r.length < 1)
     return res.status(404).json({ message: 'Livros não encontrado!' });
     return res.status(200).json(r);
   } catch (error) {
