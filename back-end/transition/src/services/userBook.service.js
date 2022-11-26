@@ -15,6 +15,7 @@ const getAll = async () => {
 const getBookId = async (id) => {
   const result = await Book.findOne({
     where: { id },
+    attributes: { exclude: ['id', 'releaseYear', 'totalPages'] },
   });
   return result;
 };
