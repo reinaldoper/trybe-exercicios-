@@ -17,6 +17,33 @@ const getUsersBooksById = async (req, res) => {
   };
 };
 
+const getAll = async (_req, res) => {
+  try {
+    const result = await userBookService.getAll();
+    if (!result)
+      return res.status(404).json({ message: 'Livros não cadastrados' });
+      return res.status(200).json(result);
+  } catch (error) {
+    console.log(error.message);
+    res.status(500).json({ message: 'Algo deu errado' });
+  }
+};
+
+const getBookId = async (req, res) => {
+  try {
+    const { id } = req.params;
+    const result = await userBookService.getBookId(Number(id));
+    if (!result)
+      return res.status(404).json({ message: 'Livros não encontrado!' });
+      return res.status(200).json(result);
+  } catch (error) {
+    console.log(error.message);
+    res.status(500).json({ message: 'Algo deu errado' });
+  }
+}
+
 module.exports = {
   getUsersBooksById,
+  getAll,
+  getBookId,
 };
