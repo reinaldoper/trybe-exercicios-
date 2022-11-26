@@ -12,6 +12,13 @@ const getAll = async () => {
   return result;
 };
 
+const getAllSearch = async () => {
+  const result = await Book.findAll({
+    attributes: { exclude: ['id', 'releaseYear', 'totalPages'] },
+  });
+  return result;
+};
+
 const getBookId = async (id) => {
   const result = await Book.findOne({
     where: { id },
@@ -24,4 +31,5 @@ module.exports = {
   getUsersBooksById,
   getAll,
   getBookId,
+  getAllSearch,
 };

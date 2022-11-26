@@ -40,10 +40,25 @@ const getBookId = async (req, res) => {
     console.log(error.message);
     res.status(500).json({ message: 'Algo deu errado' });
   }
-}
+};
+
+const getSearch = async (req, res) => {
+  try {
+    const { q } = req.query;
+    const result = await userBookService.getAllSearch();
+    const r = result.filter(({ name }) => name.includes(q));
+    if (!r)
+    return res.status(404).json({ message: 'Livros não encontrado!' });
+    return res.status(200).json(r);
+  } catch (error) {
+    console.log(error.message);
+    res.status(500).json({ message: 'Algo deu errado' });
+  }
+};
 
 module.exports = {
   getUsersBooksById,
   getAll,
   getBookId,
+  getSearch,
 };
