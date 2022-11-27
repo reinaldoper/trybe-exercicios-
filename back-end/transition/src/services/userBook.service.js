@@ -7,6 +7,11 @@ const getUsersBooksById = (id) => User.findOne({
   include: [{ model: Book, as: 'books', through: { attributes: [] } }],
 });
 
+const getBooksUsersById = (id) => Book.findOne({
+  where: { id },
+  include: [{ model: User, as: 'users', through: { attributes: [] } }],
+});
+
 const getAll = async () => {
   const result = await Book.findAll();
   return result;
@@ -97,4 +102,5 @@ module.exports = {
   getAllUser,
   getUserId,
   insertUserBook,
+  getBooksUsersById,
 };

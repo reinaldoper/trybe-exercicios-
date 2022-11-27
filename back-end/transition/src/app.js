@@ -12,6 +12,7 @@ app.get('/users', userBookController.getAllUser);
 app.post('/users', userBookController.insertUser);
 app.get('/books/search', userBookController.getSearch);
 app.get('/books/:id', userBookController.getBookId);
+app.get('/bookusers/:id', userBookController.getBooksUsersById);
 app.get('/userbooks/:id', userBookController.getUsersBooksById);
 app.get('/books', userBookController.getAll);
 

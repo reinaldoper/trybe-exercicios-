@@ -17,6 +17,21 @@ const getUsersBooksById = async (req, res) => {
   };
 };
 
+const getBooksUsersById = async (req, res) => {
+  try {
+    const { id } = req.params;
+    const book = await userBookService.getBooksUsersById(id);
+
+    if (!book)
+      return res.status(404).json({ message: 'Livro não encontrado!' });
+
+    return res.status(200).json(book);
+  } catch (e) {
+    console.log(e.message);
+    res.status(500).json({ message: 'Algo deu errado' });
+  };
+};
+
 const getAll = async (_req, res) => {
   try {
     const result = await userBookService.getAll();
@@ -116,4 +131,5 @@ module.exports = {
   getAllUser,
   getUserId,
   insertUserBook,
+  getBooksUsersById,
 };
