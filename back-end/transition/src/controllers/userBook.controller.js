@@ -29,6 +29,18 @@ const getAll = async (_req, res) => {
   }
 };
 
+const getAllUser = async (_req, res) => {
+  try {
+    const result = await userBookService.getAllUser();
+    if (!result)
+      return res.status(404).json({ message: 'Usuários não encontrados' });
+      return res.status(200).json(result);
+  } catch (error) {
+    console.log(error.message);
+    res.status(500).json({ message: 'Algo deu errado' });
+  }
+};
+
 const getBookId = async (req, res) => {
   try {
     const { id } = req.params;
@@ -36,6 +48,45 @@ const getBookId = async (req, res) => {
     if (!result)
       return res.status(404).json({ message: 'Livros não encontrado!' });
       return res.status(200).json(result);
+  } catch (error) {
+    console.log(error.message);
+    res.status(500).json({ message: 'Algo deu errado' });
+  }
+};
+
+const getUserId = async (req, res) => {
+  try {
+    const { id } = req.params;
+    const result = await userBookService.getUserId(Number(id));
+    if (!result)
+      return res.status(404).json({ message: 'Usuario não encontrado' });
+      return res.status(200).json(result);
+  } catch (error) {
+    console.log(error.message);
+    res.status(500).json({ message: 'Algo deu errado' });
+  }
+};
+
+const insertUser = async (req, res) => {
+  try {
+    const { firstName, lastName, age, books } = req.body;
+    const result = await userBookService.insert({ firstName, lastName, age, books });
+    if (!result)
+      return res.status(404).json({ message: 'Erro ao cadastrar!' });
+      return res.status(201).json({ message: `Cadastrado com sucesso o user ${firstName}` });
+  } catch (error) {
+    console.log(error.message);
+    res.status(500).json({ message: 'Algo deu errado' });
+  }
+};
+
+const insertUserBook = async (req, res) => {
+  try {
+    const { userId, bookId } = req.body;
+    const result = await userBookService.insertUserBook({ userId, bookId });
+    if (!result)
+      return res.status(404).json({ message: 'Erro ao cadastrar!' });
+      return res.status(201).json({ message: `Cadastrado com sucesso o user ${userId}` });
   } catch (error) {
     console.log(error.message);
     res.status(500).json({ message: 'Algo deu errado' });
@@ -61,4 +112,8 @@ module.exports = {
   getAll,
   getBookId,
   getSearch,
+  insertUser,
+  getAllUser,
+  getUserId,
+  insertUserBook,
 };
