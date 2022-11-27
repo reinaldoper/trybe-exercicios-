@@ -39,11 +39,38 @@ const getUserId = async (id) => {
   });
   return result;
 };
-const insert = async ({ firstName, lastName, age }) => {
+/* const insert = async ({ firstName, lastName, age }) => {
   try{
   const res = await User.create({ firstName, lastName, age });
   return res;
   } catch (e) {
+    await t.rollback();
+    console.log(e);
+    throw e; // Jogamos o erro para a controller tratar
+  }
+}; */
+
+const insert = async ({ firstName, lastName, age, books }) => {
+  const t = await sequelize.transaction();
+  try {
+    // Depois executamos as operações
+    const employee = await User.create(
+      { firstName, lastName, age },
+      { transaction: t },
+    );
+    const result = await User.findAll();
+    await UserBook.create(
+      { userId: result.length + 1, bookId: books },
+      { transaction: t },
+    );
+
+    // Se chegou até essa linha, quer dizer que nenhum erro ocorreu.
+    // Com isso, podemos finalizar a transação usando a função `commit`.
+    await t.commit();
+    return employee;
+  } catch (e) {
+    // Se entrou nesse bloco é porque alguma operação falhou.
+    // Nesse caso, o sequelize irá reverter as operações anteriores com a função rollback, não sendo necessário fazer manualmente
     await t.rollback();
     console.log(e);
     throw e; // Jogamos o erro para a controller tratar
