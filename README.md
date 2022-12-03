@@ -168,9 +168,9 @@ O programa conta com mais de 1.500 horas de aulas presenciais e online, aborda i
 
 ##### Bloco 23: Introdução - NoSQL
 
-- [ ] 23-1: _MongoDB - Introdução_
-- [ ] 23-2: _Filter Operators_
-- [ ] 23-3: _[Projeto - Data Flights]()_
+- [✅️] 23-1: _MongoDB - Introdução_
+- [✅️] 23-2: _Filter Operators_
+- [✅️] 23-3: _[Projeto - Data Flights]()_
 
 ##### Bloco 24: Updates
 
@@ -193,15 +193,15 @@ O programa conta com mais de 1.500 horas de aulas presenciais e online, aborda i
 
 ##### Bloco 28: NodeJS
 
-- [ ] 28-1: _Arquitetura de Software - Camada de Serviço_
-- [ ] 28-2: _Arquitetura web - Rest e Restful_
-- [ ] 28-3: _[Projeto - Store Manager]()_
+- [✅️] 28-1: _Arquitetura de Software - Camada de Serviço_
+- [✅️] 28-2: _Arquitetura web - Rest e Restful_
+- [✅️] 28-3: _[Projeto - Store Manager]()_
 
 ##### Bloco 29: NodeJS
 
-- [ ] 29-1: _NodeJS - JWT - (JSON Web Token)_
-- [ ] 29-2: _NodeJS - Upload de arquivos com Multer_
-- [ ] 29-3: _[Projeto - Cookmaster V2]()_
+- [✅️] 29-1: _NodeJS - JWT - (JSON Web Token)_
+- [✅️] 29-2: _NodeJS - Upload de arquivos com Multer_
+- [✅️] 29-3: _[Projeto - Cookmaster V2]()_
 
 ##### Bloco 30: Introdução - Deploy
 
