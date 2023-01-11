@@ -1,0 +1,16 @@
+{
+  "devDependencies": {
+    "@tsconfig/node16": "1.0"
+  },
+  "name": "poo-01",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "tsc index.ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}
