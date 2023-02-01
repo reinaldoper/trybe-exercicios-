@@ -1,0 +1,65 @@
+use('business'); // seleciona iguais
+db.restaurants.countDocuments({"borough": {$in:["Queens", "Staten Island", "Bronx"]}});
+
+use('business'); // seleciona diferentes
+db.restaurants.countDocuments({"cuisine": { $ne: "American" }});
+
+use('business'); // seleciona maior ou igual
+db.restaurants.countDocuments({"rating": {$gte: 8}});
+
+use('business'); // seleciona menor
+db.restaurants.countDocuments({"rating": {$lt: 4}});
+
+use('business'); // seleciona diferente
+db.restaurants.countDocuments({"rating": {$nin: [5, 6, 7]}});
+
+use('business'); // seleciona filtro not
+db.restaurants.countDocuments({ "rating": { $not: { $lte: 5 } }});
+
+use('business'); // seleciona filtro or
+db.restaurants.countDocuments({ $or: [{ "rating": { $gte: 6 } }, { "borough": "Brooklyn" }] });
+
+use('business'); // seleciona filtro and
+db.restaurants.countDocuments({
+    $and: [
+      { "borough": { $in: ['Queens', 'Staten Island', 'Brooklyn'] } },
+      { "rating": { $gt: 4 } },
+    ],
+  });
+
+use('business'); // seleciona filtro nor
+  db.restaurants.countDocuments({ $nor: [{ "rating": { $eq: 1 } }, { "cuisine": "American" }] });
+
+use('business'); // seleciona filtro and
+db.restaurants.countDocuments({
+    $and: [
+      { $or: [{ "rating": { $gt: 6, $lt: 10 } }] },
+      { $or: [{ "borough": 'Brooklyn' }, { "cuisine": { $ne: 'Delicatessen' } }] },
+    ],
+  });
+
+use('business'); // seleciona ordenação pelo nome crescente e alfabética
+db.restaurants.find({}).sort({"name": 1});
+
+use('business'); // seleciona ordenação decrescente
+db.restaurants.find({}).sort({"rating": -1, "name": -1});
+
+use('business'); // seleciona remover todos os selecionado
+db.restaurants.remove({"cuisine": {$in:["Ice Cream", "Gelato", "Yogurt", "Ices"]} });
+
+use('business');
+db.restaurants.find({'cuisine': "Jewish/Kosher"});
+
+use('business'); // deleta apenas o primeiro que encontrar
+db.restaurants.deleteOne({ "cuisine": "Ice Cream, Gelato, Yogurt, Ices" });
+
+
+use('business'); // deleta todos
+db.restaurants.deleteMany({ "cuisine": "American" });
+
+use('business'); // deleta apenas o primeiro que encontrar
+db.restaurants.deleteOne({ "cuisine": "Jewish/Kosher" });
+
+use('aula-filter-operators');
+
+db.filmes.find({}).sort({"diretor": 1});
