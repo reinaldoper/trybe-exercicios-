@@ -1,0 +1,16 @@
+{
+  "name": "my-scripts",
+  "version": "1.0.0",
+  "description": "",
+  "main": "bmi.js",
+    "scripts": {
+    "test": "npm test",
+    "bmi": "node bmi.js"
+
+  },
+  "author": "Reinaldo",
+  "license": "ISC",
+  "dependencies": {
+    "readline-sync": "^1.4.10"
+  }
+}

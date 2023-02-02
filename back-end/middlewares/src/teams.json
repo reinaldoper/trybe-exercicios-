@@ -1,0 +1,14 @@
+[
+  {
+    "id": 1,
+    "nome": "Sociedade Esportiva Palmeiras",
+    "email": "email@gmail.com",
+    "sigla": "PAL"
+  },
+  {
+    "id": 2,
+    "nome": "Sao paulo futebol clube",
+    "email": "meuemail@gmail.com",
+    "sigla": "SAO"
+  }
+]

@@ -1,0 +1,54 @@
+.App {
+  text-align: center;
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-wrap: wrap;
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+li {
+  list-style-type: none;
+}
+
+.div-li {
+  margin-left: 30px;
+  border-radius: 5px;
+}
+
+img {
+  border-radius: 5px;
+  height: 200px;
+  width: 250px;
+}
+.digimon-detail {
+  background-color: #b3bfc2;
+}
+
+.detail-img {
+  height: 500px;
+  width: 500px;
+  margin-bottom: 300px;
+}
+
+.digimon {
+  background-color: #61dafb;
+}
+
+button:hover {
+  background-color: blue;
+  color:white;
+}
+
+.back {
+  margin-left: 20px;
+  margin-top: 20px;
+  border-radius: 5px;
+  width: 300px;
+}
