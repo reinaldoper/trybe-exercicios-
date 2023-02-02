@@ -45,7 +45,7 @@ use('business'); // seleciona ordenação decrescente
 db.restaurants.find({}).sort({"rating": -1, "name": -1});
 
 use('business'); // seleciona remover todos os selecionado
-db.restaurants.remove({"cuisine": {$in:["Ice Cream", "Gelato", "Yogurt", "Ices"]} });
+db.restaurants.deleteOne({"cuisine": {$in:["Ice Cream", "Gelato", "Yogurt", "Ices"]} });
 
 use('business');
 db.restaurants.find({'cuisine': "Jewish/Kosher"});

@@ -1,0 +1,38 @@
+use('aula-filter-operators');
+db.filmes.find({});
+
+use('collection')
+db.bios.find({"contribs":{$all: ["Fortran"]}}, {"name.first": "John"});
+
+// filtrando todos que satisfazem a condição
+use('collection');
+db.bios.find({"contribs": {$all: ["Fortran"]}});
+
+// Filtrando por elemento e year maior ou igual
+use('collection');
+db.bios.find({"awards": {$elemMatch: {"award": "Turing Award", "year": {$gte: 1970}}}});
+
+//Filtra a quantidade de elementos de um array
+use('collection');
+db.bios.find({"contribs": {$size: 2}})
+
+use('monthlyBudget');
+db.monthy.insertMany([{ _id: 1, category: "food", budget: 400, spent: 450 },
+{ _id: 2, category: "drinks", budget: 100, spent: 150 },
+{ _id: 3, category: "clothes", budget: 100, spent: 50 },
+{ _id: 4, category: "misc", budget: 500, spent: 300 },
+{ _id: 5, category: "travel", budget: 200, spent: 650 }]);
+
+
+// A query abaixo utiliza o operador $expr para buscar os documentos em que o valor de spent exceda o valor de budget:
+use('monthlyBudget');
+db.monthy.find({$expr: { $gt: [ "$spent", "$budget" ] }});
+
+
+// Filtra por regex, conforme regra estabelecida
+use('monthlyBudget');
+db.monthy.find({"category": {$regex: /s$/}});
+
+// Filtra como resultado matemático a saída especificada pelo módulo
+use('monthlyBudget');
+db.monthy.find({"budget": {$mod: [5, 0]}});
