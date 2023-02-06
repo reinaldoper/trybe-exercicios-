@@ -145,7 +145,7 @@ db.tags.updateMany(
   { _id: 1 },
   {
     $min: { dateEntered: new Date("2019-09-25") },
-    $max: { dateExpired: new Date("2019-10-02") }
+    $max: { dateExpired: new Date("2019-10-03") }
   }
 );
 
