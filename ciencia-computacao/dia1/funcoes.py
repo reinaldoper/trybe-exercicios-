@@ -77,6 +77,6 @@ def type_of_triangle(side1, side2, side3):
         return "isósceles"
     else:
         return "escaleno"
-    
+
 
 print(type_of_triangle(3, 4, 5))
