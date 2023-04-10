@@ -4,7 +4,7 @@ client = MongoClient()
 db = client.catalogue
 # book representa um dado obtido na raspagem
 book = {
-    "title": "Zé ruela",
+    "title": "Zé ruela primeiro",
 }
 document_id = db.books.insert_one(book).inserted_id
 print(document_id)
